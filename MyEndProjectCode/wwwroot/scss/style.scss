@@ -1,0 +1,33 @@
+
+
+@use './Pages/home';
+@use './Pages/blog';
+@use './Pages/about';
+@use './Pages/login';
+@use './Pages/register';
+@use './Pages/contact';
+@use './Pages/blog-single';
+@use './Pages/shop';
+@use './Pages/product-single';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.first-sec{
+    padding-top: 200px;
+}
+ 
+
+
