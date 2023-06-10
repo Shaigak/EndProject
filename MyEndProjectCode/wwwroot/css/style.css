@@ -21,6 +21,11 @@
   text-decoration: none;
   color: #fff;
 }
+
+
+.home{
+    color:goldenrod;
+}
 .main .tophead .wrappertophead .mt {
   transition: color 1s;
 }
