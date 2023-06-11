@@ -8,5 +8,12 @@ namespace MyEndProjectCode.Controllers
         {
             return View();
         }
+
+
+
+        public IActionResult GetBlogView(int? id)
+        {
+            return View();
+        }
     }
 }

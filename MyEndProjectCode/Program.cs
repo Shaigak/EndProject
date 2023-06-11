@@ -1,3 +1,6 @@
+using MyEndProjectCode.Services;
+using MyEndProjectCode.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSession();
 
+
+
+//builder.Services.AddScoped<ILayoutService, LayoutService>();
 
 var app = builder.Build();
 
