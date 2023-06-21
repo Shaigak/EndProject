@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="css/slick.css" />
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
     <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
 
     <title>Home</title>
 </head>
@@ -47,9 +49,11 @@
                         <ul>
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./about.html">About</a></li>
+
                             <li><a href="./shop.html">Shop</a></li>
                             <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
+
                             <li><a href="login.html">Login</a>/<a href="register.html">Sign up</a></li>
                             <li class="basket">
                                 <a class="basket-nav" href="#contact-section">
@@ -71,8 +75,62 @@
                         <li class="navli"><a class="nava" asp-controller="Home" asp-action="Index">HOME</a></li>
                         <li class="navli"><a class="nava" asp-controller="About" asp-action="Index">ABOUT</a></li>
                         <li class="navli"><a class="nava" asp-controller="Shop" asp-action="Index">SHOP</a></li>
-                           <li class="navli"><a class="nava" asp-controller="Blog" asp-action="Index">BLOG</a></li>
-                            <li class="navli"><a class="nava" asp-controller="Contact" asp-action="Index">CONTACT</a></li>
+                        <li class="navli"><a class="nava" asp-controller="Blog" asp-action="Index">BLOG</a></li>
+                        <li class="navli"><a class="nava" asp-controller="Contact" asp-action="Index">CONTACT</a></li>
+                        <li>
+                            <a href="#exampleModal"
+                               class="search-btn bt"
+                               data-bs-toggle="modal"
+                               data-bs-target="#exampleModal">
+                                <i class="fa-solid mainsearch fa-magnifying-glass"> </i>
+
+                            </a>
+                        </li>
+
+                        <div class="modal fade"
+                             id="exampleModal"
+                             tabindex="-1"
+                             aria-labelledby="exampleModal"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content modal-bg-dark">
+                                    <div class="modal-header">
+                                        <button type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                                data-tippy="Close"
+                                                data-tippy-inertia="true"
+                                                data-tippy-animation="shift-away"
+                                                data-tippy-delay="50"
+                                                data-tippy-arrow="true"
+                                                data-tippy-theme="sharpborder"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="modal-search">
+                                            <span class="searchbox-info">
+                                                Start typing and press Enter to search or ESC to
+                                                close
+                                            </span>
+                                            <form action="#" class="hm-searchbox">
+                                                <input class="input-search"
+                                                       type="text"
+                                                       name="Search..."
+                                                       value="Search..."
+                                                       onblur="if(this.value==''){this.value='Search...'}"
+                                                       onfocus="if(this.value=='Search...'){this.value=''}"
+                                                       autocomplete="off" />
+                                                <button class="search-btn"
+                                                        type="submit"
+                                                        aria-label="searchbtn">
+                                                    <i class="pe-7s-search"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <li class="basket">
                             <a class="basket-nav" href="#contact-section">
                                 <span><i class="fas fa-shopping-basket basket "></i></span>
@@ -160,6 +218,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="js/slick.min.js"></script>
+<script src="https://kit.fontawesome.com/020cd902c8.js" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 
 </html>

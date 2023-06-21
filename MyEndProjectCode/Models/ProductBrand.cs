@@ -4,5 +4,11 @@
     {
         public int ProductId { get; set; }
         public Product Product { get; set; }
+
+        public int BrandProId{ get; set; }
+     
+        public BrandPro BrandPro { get; set; }
+
+
     }
 }
