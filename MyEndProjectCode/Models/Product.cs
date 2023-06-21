@@ -1,4 +1,6 @@
-﻿namespace MyEndProjectCode.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MyEndProjectCode.Models
 {
     public class Product:BaseEntity
     {
@@ -10,5 +12,14 @@
         public int Rate { get; set; } = 5;
 
         public ICollection<ProductTag> ProductTags { get; set; }
+        public ICollection<ProductImage> ProductImages { get; set; }
+
+        public ICollection<ProductCategory> ProductCategories { get; set; }
+
+        public ICollection<ProductBrand> ProductBrands { get; set; }
+
+        [NotMapped]
+        public IFormFile Photo { get; set; }
+
     }
 }
