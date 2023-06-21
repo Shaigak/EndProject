@@ -12,6 +12,8 @@ builder.Services.AddSession();
 
 //builder.Services.AddScoped<ILayoutService, LayoutService>();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
