@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k+uv2LGnidlVYiyGGp49q/xFLxqM9iCQLpGAAc+5bpA=",
+  "Hash": "siIpa9ppe79x96ETEoSS5FNIp0fqPUcqDYfK+UYe6cY=",
   "Source": "MyEndProjectCode",
   "BasePath": "_content/MyEndProjectCode",
   "Mode": "Default",
@@ -357,6 +357,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\first.png"
     },
     {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\footer-logo.png",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/footer-logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\footer-logo.png"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\hava.png",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -440,6 +457,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\light.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\logo (1).png",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/logo (1).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\logo (1).png"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\logo.png",

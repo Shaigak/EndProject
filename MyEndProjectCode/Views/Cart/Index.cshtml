@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+
+<div class="container my-5">
+
+    <h2>Products</h2>
+
+   
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Count</th>
+      <th scope="col">Price</th>
+      <th scope="col">Total</th>
+      <th scope="col">Options</th>
+      
+    </tr>
+    </thead>
+     <tbody>
+     
+
+
+        <tr @*data-id=@item.Id *@class="products"   >
+      <td><img style="width:70px"; height="70px"; src="~/img/" /></td>
+      <td>Cavid</td>
+      <td>Ismayilzade</td>
+
+      <td> <a><span class="minus" style="cursor:pointer;">-</span></a> 
+          <span class="product-count">3</span>
+
+          <a><span class="plus" style="cursor:pointer;">+</span></a>   </td>
+      
+      <td>550$</td>
+      
+      <td>1500$</td>
+      <td>  <a style="cursor:pointer" class="text-danger deleteProd">Delete</a></td>
+
+      
+        </tr>
+       
+   
+     </tbody>
+        </table>
+    
+
+
+ 
+
+     
+
+
+</div>

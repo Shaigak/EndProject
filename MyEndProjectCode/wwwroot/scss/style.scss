@@ -6,8 +6,8 @@
 @use './Pages/login';
 @use './Pages/register';
 @use './Pages/contact';
-@use './Pages/blog-single';
 @use './Pages/shop';
+@use './Pages/cart';
 @use './Pages/product-single';
 
 
@@ -20,7 +20,7 @@
 
 
 header{
-    position: fixed;
+    
     width: 100%;
     z-index: 1;
 }
@@ -28,6 +28,7 @@ header{
 .first-sec{
     padding-top: 200px;
 }
- 
+
+
 
 
