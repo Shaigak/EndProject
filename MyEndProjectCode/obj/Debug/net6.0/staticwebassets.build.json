@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "siIpa9ppe79x96ETEoSS5FNIp0fqPUcqDYfK+UYe6cY=",
+  "Hash": "U/JfapXXo5owVzjCXlZP5zkoTMirfAqQvea4Qd0+jLU=",
   "Source": "MyEndProjectCode",
   "BasePath": "_content/MyEndProjectCode",
   "Mode": "Default",
@@ -323,6 +323,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\bren.png"
     },
     {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\deal-bg.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/deal-bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\deal-bg.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\find-img-710x539.png",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -508,6 +525,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\mecr.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\nwsletter-back.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/nwsletter-back.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\nwsletter-back.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\oil.png",
