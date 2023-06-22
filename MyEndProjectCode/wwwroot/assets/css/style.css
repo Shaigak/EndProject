@@ -8,3 +8,51 @@
     margin-left: 40px;
 }
 
+.auto {
+    position: absolute;
+    margin-top: 130px;
+    font-size: 40px;
+}
+
+.accer {
+    position: absolute;
+    margin-top: 200px;
+}
+
+.Collection2020 {
+    position: absolute;
+    margin-top: 80px;
+    
+}
+
+.slide-btn{
+    position:absolute;
+    margin-top:250px
+}
+
+.sliderim{
+    height:350px;
+    width:100%;
+}
+
+.explore {
+    position: absolute;
+    margin-top: 220px;
+}
+
+.category1{
+    position:absolute;
+    margin-top:150px;
+    color:white;
+}
+
+.bask{
+   position:absolute;
+   margin-left:-40px;
+   margin-top:3px;
+   
+}
+
+.mainsearch:hover {
+    color: #fcb818;
+}
