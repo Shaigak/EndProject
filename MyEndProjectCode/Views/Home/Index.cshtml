@@ -1,4 +1,7 @@
-﻿@{
+﻿@using MyEndProjectCode.ViewModels
+@model HomeVM
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,30 +9,29 @@
 
 
     <section data-aos="fade-in" class="slider first-sec">
+       
+        
+        
         <div class="single-item">
-            <div class="slider-content">
-                <img class="sliderim" src="~/assets/images/slider-img-1600x577.jpg" />
-                <p class="Collection2020">2020 Collections </p>
-                <h2 class="auto">Auto Parts</h2>
-                <p class="accer">All kind of Accessories &amp; Interior</p>
+
+            @foreach (var item in Model.Sliders)
+            {
+                 <div class="slider-content">
+
+                
+                <img class="sliderim" src="~/assets/images/@item.Image" />
+                <p class="Collection2020">@item.Title </p>
+                <h2 class="auto">@item.Description</h2>
+                <p class="accer">@item.EndDesc</p>
 
                 <div class="slide-btn">
                     <a class="btn common-btn" href="#"><span class="exp">Explore Now</span><i class="icon-next"></i></a>
 
                 </div>
             </div>
-
-            <div class="slider-content">
-                <img class="sliderim" src="~/assets/images/slider-img-1600x577.jpg" />
-                <p class="Collection2020">2020 Collections </p>
-                <h2 class="auto">Auto Parts</h2>
-                <p class="accer">All kind of Accessories &amp; Interior</p>
-
-                <div class="slide-btn">
-                    <a class="btn common-btn" href="#"><span class="exp">Explore Now</span><i class="icon-next"></i></a>
-
-                </div>
-            </div>
+                
+            }
+           
 
         </div>
     </section>
@@ -47,9 +49,9 @@
 
         <div data-aos="fade-up" class="best-seller">
             <div class="bs-text">
-                <div><img src="https://www.ncodetechnologies.com/zooy/images/tit-deco.png" alt=""></div>
-                <span class="punchline">Top Sale On This Week</span>
-                <h2 class="sec-title">Best Seller</h2>
+                <div><img src="~/assets//images//tit-deco.png" alt=""></div>
+                <span class="punchline">@Model.Settings["TopSeller"]</span>
+                <h2 class="sec-title">@Model.Settings["BestSeller"]</h2>
             </div>
 
             <div class="best-seller-card" style="display: flex;">
@@ -189,20 +191,24 @@
     </section>
 
     <section class="find-section">
-        <div class="find">
+       @foreach (var item in Model.Banners)
+       {
+            <div class="find">
             <div data-aos="fade-up" class="find-div">
-                <h2 class="find-h2">ALL KINDS OF PARTS THAT YOU NEED CAN FIND HERE</h2>
+                <h2 class="find-h2">@item.Description</h2>
                 <a class="btn btn-dark explore" href="#"><span>Explore Now</span></a>
             </div>
-            <div data-aos="fade-up" class=""><img class="foto-find" src="~/assets/images/find-img-710x539.png" alt=""></div>
+            <div data-aos="fade-up" class=""><img class="foto-find" src="~/assets/images/@item.Image" alt=""></div>
         </div>
+           
+       }
     </section>
 
     <section data-aos="fade-up" class="p-category">
         <div class="bs-text">
-            <div><img src="https://www.ncodetechnologies.com/zooy/images/tit-deco.png" alt=""></div>
-            <span class="punchline">All Popular Categories</span>
-            <h2 class="sec-title" style="text-align: center;">Popular Categories</h2>
+            <div><img src="~/assets//images//tit-deco (1).png" alt=""></div>
+            <span class="punchline">@Model.Settings["Popular"]</span>
+            <h2 class="sec-title" style="text-align: center;">@Model.Settings["PopularCate"]</h2>
         </div>
 
 

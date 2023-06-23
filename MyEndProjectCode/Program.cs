@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using MyEndProjectCode.Data;
 using MyEndProjectCode.Services;
 using MyEndProjectCode.Services.Interfaces;
 
@@ -9,6 +11,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 
 
+builder.Services.AddDbContext<AppDbContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("Connection"));
+});
+
+builder.Services.AddScoped<ILayoutService, LayoutService>();
+builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IBannerService, BannerService>();
 
 //builder.Services.AddScoped<ILayoutService, LayoutService>();
 
