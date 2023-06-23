@@ -8,6 +8,10 @@ namespace MyEndProjectCode.ViewModels
 
         public List<Banner> Banners { get; set; }
 
+        public List<Blog> Blogs { get; set; }
+
+        public List<Popular> Populars { get; set; }
+
         public Dictionary<string, string> Settings { get; set; }
     }
 }

@@ -18,7 +18,9 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IPopularService, PopularService>();
 builder.Services.AddScoped<IBannerService, BannerService>();
+builder.Services.AddScoped<IBlogService, BlogService>();
 
 //builder.Services.AddScoped<ILayoutService, LayoutService>();
 
