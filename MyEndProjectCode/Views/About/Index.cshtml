@@ -1,5 +1,6 @@
-﻿
+﻿@using MyEndProjectCode.ViewModels
 
+@model AboutVM
 <section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="first-sec dealofday intro aos-init aos-animate">
   <div data-aos="fade-right" class="divday">
     <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">ABOUT</span></p>
@@ -8,32 +9,46 @@
 </section>
 
 <section data-aos="fade-in" class="welcome">
-    <div data-aos="fade-right" class="welcome-div">
-        <h2 class="welcome-h2">WELCOME TO ZO<span class="o">O</span>Y</h2>
-        <p class="welcome-p1">Shopping the way you like it!</p>
-        <p class="welcome-p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+   @foreach (var item in Model.Historys)
+   {
+        <div data-aos="fade-right" class="welcome-div">
+        @Html.Raw(@item.Title)
+        <p class="welcome-p1">@item.Name</p>
+        <p class="welcome-p2">@item.Description</p>
         <div class="welcome-div2">
-            <div><img src="~/assets/images/about-img1-602x429.png" alt=""></div>
+            <div><img src="~/assets/images/@item.Image" alt=""></div>
             <div class="welcome-info2">
-                <p class="ceo">Co.Founder</p>
-                <p class="ceo-name">Joviar Karlo</p>
+                <p class="ceo">@item.Author</p>
+                <p class="ceo-name">@item.AuthorName</p>
                
             </div>
         </div>
     </div>
+       
+   }
 </section>
 
+
+
 <section  class="our-history">
-    <div class="our-history-div">
-        <div data-aos="fade-in"><img class="welcome-img" src="~/assets/images/about-img1-602x429.png" alt=""></div>
+
+    @foreach (var item in Model.Abouts)
+    {
+          <div class="our-history-div">
+        <div data-aos="fade-in"><img class="welcome-img" src="~/assets/images/@item.FirstImage" alt=""></div>
         <div data-aos="fade-in">
-            <p class="our-p1">OUR HISTORY</p>
-            <h2 class="our-h2">INNOVATIVE SOLUTION OF AUTO PARTS</h2>
-            <p class="our-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia qui officiis quia. Cupiditate, voluptates porro vitae autem et nobis, sequi molestias cum, hic explicabo accusantium impedit? Laudantium labore recusandae tempore.</p>
+            <p class="our-p1">@item.Title</p>
+            <h2 class="our-h2">@item.AboutTitle</h2>
+            <p class="our-p">@item.Description</p>
             <button class="our-btn">Shop Now</button>
         </div>
     </div>
+        
+    }
+  
 </section>
+
+
 
 <!-- slider -->
 

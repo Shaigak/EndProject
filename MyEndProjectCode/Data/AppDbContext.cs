@@ -13,6 +13,7 @@ namespace MyEndProjectCode.Data
         public DbSet<Settings> Settings { get; set; }
         public DbSet<About> Abouts { get; set; }
 
+        public DbSet<History> Historys { get; set; }
         public DbSet<Slider> Sliders { get; set; }
 
         public DbSet<Product> Products { get; set; }

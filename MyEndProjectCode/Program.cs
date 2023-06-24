@@ -21,7 +21,8 @@ builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IPopularService, PopularService>();
 builder.Services.AddScoped<IBannerService, BannerService>();
 builder.Services.AddScoped<IBlogService, BlogService>();
-
+builder.Services.AddScoped<IBrandService, BrandService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 //builder.Services.AddScoped<ILayoutService, LayoutService>();
 
 

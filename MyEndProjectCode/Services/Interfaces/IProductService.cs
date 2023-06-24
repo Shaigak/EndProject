@@ -2,9 +2,8 @@
 
 namespace MyEndProjectCode.Services.Interfaces
 {
-    public interface IBrandService
+    public interface IProductService
     {
-        Task<List<Brand>> GetAll();
-
+        Task<List<Product>> GetAll();
     }
 }
