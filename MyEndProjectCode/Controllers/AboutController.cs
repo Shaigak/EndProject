@@ -21,12 +21,14 @@ namespace MyEndProjectCode.Controllers
         {
             List<About> abouts = await  _context.Abouts.ToListAsync();
             List<History> historys = await _context.Historys.ToListAsync();
+            List<Team> teams = await _context.Teams.ToListAsync();
 
 
             AboutVM model = new()
             {
                 Abouts = abouts,
-                Historys = historys
+                Historys = historys,
+                Teams = teams
                 
 
             };

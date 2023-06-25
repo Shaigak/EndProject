@@ -1,97 +1,59 @@
-﻿
+﻿@using MyEndProjectCode.ViewModels
 
+@model BlogVM
 <section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="first-sec dealofday intro aos-init aos-animate">
-  <div data-aos="fade-right" class="divday">
-    <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">BLOG</span></p>
-    <h4 class="h4-intro">BLOG</h4>
-  </div>
+    <div data-aos="fade-right" class="divday">
+        <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">BLOG</span></p>
+        <h4 class="h4-intro">BLOG</h4>
+    </div>
 </section>
-  
-    
-    <section style="margin-bottom: 50px;" data-aos="fade-right" class="last-new">
-        <div class="bs-text">
-          <div><img src="https://www.ncodetechnologies.com/zooy/images/tit-deco.png" alt=""></div>
-          <span class="punchline">Check Our Latest News
-          </span>
-          <h2 class="sec-title">BLOG</h2>
-      </div>
-      <div  class="p-categoryrow">
-        <div class="p-category-div  lastnew-div">
-          <div><img class="last-new-img" style="width: 400px;" src="https://www.ncodetechnologies.com/zooy/images/blog-listing-img1-389x343.jpg" alt=""></div>
-          <div class="info-last">
-            <div class="post-date">2020 March 27</div>
-            <h4 ><a class="blog-tit" href="blog-detail.html">Porsche will announce new Electrical Car</a></h4>
-            <p class="blog-dis">One more thing that could help you to start to live green is to begin</p>
-            <a href="blog-detail.html" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="p-category-div lastnew-div">
-          <div><img class="last-new-img" style="width: 400px;" src="https://www.ncodetechnologies.com/zooy/images/blog-listing-img2-370x266.jpg" alt=""></div>
-          <div class="info-last">
-            <div class="post-date">2020 March 27</div>
-            <h4 ><a class="blog-tit" href="blog-detail.html">Cursus vestibulum at interdum vivamus</a></h4>
-            <p class="blog-dis">Donec tellus Nulla lorem Nullam elit id ut ue eget dapibus congue</p>
-            <a href="blog-detail.html" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="p-category-div lastnew-div">
-          <div><img class="last-new-img" style="width: 400px;" src="https://www.ncodetechnologies.com/zooy/images/blog-listing-img3-370x266.jpg" alt=""></div>
-          <div class="info-last">
-            <div class="post-date">2020 March 27</div>
-            <h4 ><a class="blog-tit" href="blog-detail.html">Risus pretium tortor metus fringilla</a></h4>
-            <p class="blog-dis">Odio ut pretium ligula quam Vestibulum consequat convallis</p>
-            <a href="blog-detail.html" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
-          </div>
-        </div>
-        <div data-aos="fade-up" class="p-category-div lastnew-div">
-            <div><img class="last-new-img" style="width: 400px;" src="https://www.ncodetechnologies.com/zooy/images/blog-listing-img3-370x266.jpg" alt=""></div>
-            <div class="info-last">
-              <div class="post-date">2020 March 27</div>
-              <h4 ><a class="blog-tit" href="blog-detail.html">Risus pretium tortor metus fringilla</a></h4>
-              <p class="blog-dis">Odio ut pretium ligula quam Vestibulum consequat convallis</p>
-              <a href="blog-detail.html" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
-            </div>
-          </div>
-          <div data-aos="fade-up" class="p-category-div lastnew-div">
-            <div><img class="last-new-img" style="width: 400px;" src="https://www.ncodetechnologies.com/zooy/images/blog-listing-img3-370x266.jpg" alt=""></div>
-            <div class="info-last">
-              <div class="post-date">2020 March 27</div>
-              <h4 ><a class="blog-tit" href="blog-detail.html">Risus pretium tortor metus fringilla</a></h4>
-              <p class="blog-dis">Odio ut pretium ligula quam Vestibulum consequat convallis</p>
-              <a href="blog-detail.html" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
-            </div>
-          </div>
-          <div data-aos="fade-up" class="p-category-div lastnew-div">
-            <div><img class="last-new-img" style="width: 400px;" src="https://www.ncodetechnologies.com/zooy/images/blog-listing-img3-370x266.jpg" alt=""></div>
-            <div class="info-last">
-              <div class="post-date">2020 March 27</div>
-              <h4 ><a class="blog-tit" href="blog-detail.html">Risus pretium tortor metus fringilla</a></h4>
-              <p class="blog-dis">Odio ut pretium ligula quam Vestibulum consequat convallis</p>
-              <a href="blog-detail.html" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
-            </div>
-          </div>
-        
-      </div>
-     
-      </section>
 
 
-      
-      <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
+<section style="margin-bottom: 50px;" data-aos="fade-right" class="last-new">
+    <div class="bs-text">
+        <div><img src="~/assets//images//tit-deco (1).png" alt=""></div>
+        <span class="punchline">
+            @Model.Settings["BlogTitle"]
+        </span>
+        <h2 class="sec-title">@Model.Settings["Blog"]</h2>
+    </div>
+    <div class="p-categoryrow">
+
+
+        @foreach (var item in Model.Blogs)
+        {
+            <div class="p-category-div  lastnew-div">
+                <div><img class="last-new-img" style="width: 400px;" src="~/assets//images/@item.Images.FirstOrDefault().Image" alt=""></div>
+                <div class="info-last">
+                    <div class="post-date">@item.CreateDate.ToString("dd MMMMM yyyy")</div>
+                    <h4><a class="blog-tit" href="blog-detail.html">@item.Title</a></h4>
+                    <p class="blog-dis">@item.Description</p>
+                    <a asp-controller="Blog" asp-action="GetBlogView" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+</section>
+
+
+
+<nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
+                <span aria-hidden="true">&laquo;</span>
             </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
             <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
+                <span aria-hidden="true">&raquo;</span>
             </a>
-          </li>
-        </ul>
-      </nav>
- 
+        </li>
+    </ul>
+</nav>

@@ -50,38 +50,39 @@
 
 
 
-<!-- slider -->
+
 
 <section data-aos="zoom-in">
-  <!-- Testimonial Carousel -->
+  
   <div class="testimonial-reel">
 
-
-    <!-- Testimonial -->
+  @foreach (var item in Model.Teams)
+  {
+      
     <div>
 
         <div class="box">
 
-            <!-- Testimonial Image -->
+           
             <figure class="image">
-                <img class="img-fluid rounded-circle" src="~/assets/images/KARL.jpg">
+                <img class="img-fluid rounded-circle" src="~/assets/images/@item.Image">
             </figure>
-            <!-- / Testimonial Image -->
+          
 
             <div class="test-component">
-                <!-- Title -->
+              
                 <article class="test-title">
 
                     <h4>
-                      Jonhnmahu  Due
+                     @item.Name
                     </h4>
 
                 </article>
-                <!-- / Title -->
+              
 
                 <article class="test-content">
                     <p>
-                      “Lorem ipsum dolor sit amet, consectetur addipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mipisicing elit, sed do eiusmod temed do eiusmod tempor incididunt ut labore et dolore mipisicing elit,sed do eiusmod tepor incididunt ut labore et dolore magna aliqua ”
+                     @item.Description
                     </p>
                 </article>
 
@@ -90,115 +91,12 @@
         </div>
 
     </div>
-    <!-- / Testimonial -->
-
-    <!-- Testimonial -->
-    <div>
-
-        <div class="box">
-
-            <!-- Testimonial Image -->
-            <figure class="image">
-                <img class="img-fluid rounded-circle"src="~/assets/images/KARL.jpg">
-            </figure>
-            <!-- / Testimonial Image -->
-
-            <div class="test-component">
-                <!-- Title -->
-                <article class="test-title">
-
-                    <h4>
-                        Efecha Omoware
-                    </h4>
-
-                </article>
-                <!-- / Title -->
-
-                <article class="test-content">
-                    <p>
-                        I now enjoy financial freedom like I’ve never know before doing what I love.
-                    </p>
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-    <!-- / Testimonial -->
-
-    <!-- Testimonial -->
-    <div>
-
-        <div class="box">
-
-            <!-- Testimonial Image -->
-            <figure class="image">
-                <img class="img-fluid rounded-circle" src="~/assets/images/KARL.jpg">
-            </figure>
-            <!-- / Testimonial Image -->
-
-            <div class="test-component">
-                <!-- Title -->
-                <article class="test-title">
-
-                    <h4>
-                        Efecha Omoware
-                    </h4>
-
-                </article>
-                <!-- / Title -->
-
-                <article class="test-content">
-                    <p>
-                        I now enjoy financial freedom like I’ve never know before doing what I love.
-                    </p>
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-    <!-- / Testimonial -->
-
-    <!-- Testimonial -->
-    <div>
-
-        <div class="box">
-
-            <!-- Testimonial Image -->
-            <figure class="image">
-                <img class="img-fluid rounded-circle" src="~/assets/images/KARL.jpg">
-            </figure>
-            <!-- / Testimonial Image -->
-
-            <div class="test-component">
-                <!-- Title -->
-                <article class="test-title">
-
-                    <h4>
-                        Efecha Omoware
-                    </h4>
-
-                </article>
-                <!-- / Title -->
-
-                <article class="test-content">
-                    <p>
-                        I now enjoy financial freedom like I’ve never know before doing what I love.
-                    </p>
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-    <!-- / Testimonial -->
+  }
+ 
+  
 
 </div>
-<!-- / Testimonial Carousel -->
+
 </section>
 
 <section data-aos="fade-up" class="helplinesec helplineabout">

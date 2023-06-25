@@ -6,6 +6,8 @@ namespace MyEndProjectCode.ViewModels
     {
         public List<About> Abouts { get; set; }
 
+        public List<Team> Teams { get; set; }
+
         public List<History> Historys { get; set; }
 
     }

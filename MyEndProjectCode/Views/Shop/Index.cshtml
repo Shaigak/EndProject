@@ -1,346 +1,126 @@
-﻿
-<section  data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="dealofday intro aos-init aos-animate first-sec">
-  <div data-aos="fade-right" class="divday">
-    <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">BLOG</span></p>
-    <h4 class="h4-intro">SHOP</h4>
-  </div>
+﻿@using MyEndProjectCode.ViewModels
+
+
+@model ShopVM
+<section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="dealofday intro aos-init aos-animate first-sec">
+    <div data-aos="fade-right" class="divday">
+        <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">BLOG</span></p>
+        <h4 class="h4-intro">SHOP</h4>
+    </div>
 </section>
 
 
 
-<section >
+<section>
 
-
-        <!-- products section starts -->
-        <section class="products no-select">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="left-sidebar">
-                            <div class="search">
-                                <h4>Search</h4>
-                                <div class="search-product">
-                                    <input type="search" name="" id="" placeholder="Search products"
-                                        class="search-product-input">
-                                    <img  src="./search-product-icon.png" alt="" class="search-product-icon">
-                                </div>
-                            </div>
-                            <div class="categories">
-                                <h4>Product categories</h4>
-                                <ul>
-                                    <li>Electronics (62)</li>
-                                    <li>Repair Parts (90) </li>                          
-                                    <li>Wheels & Tires (55)</li>
-                                    <li>Lights & Lighting (120)</li>
-                                    <li>Oils & Fluids (120)</li>
-                                    <li>Tools & Equipment (120)</li>
-                                </ul>
-                            </div>
-                            <div class="categories brand">
-                                <h4>BY BRAND</h4>
-                                <ul>
-                                 
-                                    <li>Toyota</li>                   
-                                    <li>Ford Motor</li>
-                                    <li>Honda Motors</li>
-                                    <li>Fiat Chrysler</li>
-                                    <li>BMW</li>
-                                    <li>Nissan Motor</li>
-                                </ul>
-                            </div>
-
-                            <div class="tags">
-                                <h4>BY TAGS</h4>
-                                <ul>
-                                    <a href="#">2011</a>
-                                    <a href="#">2012</a>
-                                    <a href="#">2013</a>
-                                    <a href="#">2014</a>
-                                </ul>
+    <section class="products no-select">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left-sidebar">
+                        <div class="search">
+                            <h4>Search</h4>
+                            <div class="search-product">
+                                <input type="search" name="" id="" placeholder="Search products"
+                                       class="search-product-input">
+                                <img src="./search-product-icon.png" alt="" class="search-product-icon">
                             </div>
                         </div>
+                        <div class="categories">
+                            <h4>Product categories</h4>
+                            @foreach (var item in Model.Categories)
+                            {
+                                <ul>
 
-                        <div  class="banner-img img-full">
-                            <a   href="#"><img  class="img-fluid mx-auto" src="~/assets/images/banner.jpg" alt=""></a>
-                          </div>
+                                    <li>@item.Name (62)</li>
+
+                                </ul>
+                            }
+                        </div>
+                        <div class="categories brand">
+                            <h4>BY BRAND</h4>
+                            @foreach (var item in Model.BrandPros)
+                            {
+                                <ul>
+
+                                    <li>@item.Name</li>
+
+                                </ul>
+
+                            }
+                        </div>
+
+                        <div class="tags">
+                            <h4>BY TAGS</h4>
+                          @foreach (var item in Model.Tags)
+                          {
+                                <ul>
+                                <a href="#">@item.Year</a>
+                                
+                            </ul>
+                          }
+                        </div>
                     </div>
-                    <div class="col-lg-9 products-side">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/oil.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Air Filter</a> </h5>
-                                        <p><span>$</span><span class="price">39.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/amp.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Perfect Titanium Wheel Cover</a> </h5>
-                                        <p><span>$</span><span class="price">39.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/bren.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Perfect Titanium Wheel Cover For Toyoto</a> </h5>
-                                        <p><span>$</span><span class="price">79.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/first.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Air Cooler</a> </h5>
-                                        <p><span>$</span><span class="price">639.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/hava.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Air Filter</a> </h5>
-                                        <p><span>$</span><span class="price">19.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/light.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Headlight For BMW</a> </h5>
-                                        <p><span>$</span><span class="price">839.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/spidometr.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Speedometer</a> </h5>
-                                        <p><span>$</span><span class="price">139.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/bren.png" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Perfect Titanium Wheel Cover For Bmw</a> </h5>
-                                        <p><span>$</span><span class="price">139.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/2.jpg" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Headlight For Audi</a> </h5>
-                                        <p><span>$</span><span class="price">539.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/3.jpg" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Headlight For Toyota</a> </h5>
-                                        <p><span>$</span><span class="price">439.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/4.jpg" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Engine Cap</a> </h5>
-                                        <p><span>$</span><span class="price">49.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/5.jpg" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center"><i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5 > <a class="productt-name" href="./product-single.html">Clipboard</a> </h5>
-                                        <p><span>$</span><span class="price">339.99</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
-                                <ul class="pagination">
-                                  <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                      <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                  </li>
-                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                  <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                      <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                  </li>
-                                </ul>
-                              </nav>
-                        </div>
+
+                    <div class="banner-img img-full">
+                        <a href="#"><img class="img-fluid mx-auto" src="~/assets/images/banner.jpg" alt=""></a>
                     </div>
                 </div>
-        </section>
-        <!-- products section ends -->
+                <div class="col-lg-9 products-side">
+                    <div class="row">
+                        @foreach (var item in Model.Products)
+                        {
+                            <div class="col-lg-4 col-md-6 pb-5">
+                                <div class="productt" id="1">
+                                    <div class="product-image">
+                                        <img src="~/assets/images/@item.ProductImages.FirstOrDefault().Image" alt="">
+                                        <div class="basket-wishlist-compare d-flex justify-content-center">
+                                            <div class="add-basket text-center">
+                                                <i class="fas fa-shopping-basket"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-inf">
+                                        <h5> <a class="productt-name" href="./product-single.html">@item.Name</a> </h5>
+                                        <p><span>$</span><span class="price">@item.Price</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </section>
+
     </main>
 </section>
 
-<footer data-aos="fade-up" >
-    <div class="foot">
-      <div class=" foot-row">
-        <div class="">
-          <div class="ft-logo">
-            <a href="#"><img src="https://www.ncodetechnologies.com/zooy/images/footer-logo.png" alt="ZOOY - Modern &amp; Beautiful Auto Parts HTML5 &amp; Bootstrap 4 Template"></a>
-          </div>
-          <div class="cmn-detail">
-            <p><i class="bi bi-geo-alt-fill foot-icon"></i>F-25, 1960s with the release<br>of Letraset Gujarat, INDIA..</p>
-            <p><i class="bi bi-envelope foot-icon"></i><a class="foot-a" href="mailto:support@zooy.com">support@zooy.com</a></p>
-            <p><i class="bi bi-telephone-fill foot-icon"></i><a class="foot-a" href="tel:+0789123456">0 (789) 123-456</a></p>
-            <p><i class="bi bi-clock foot-icon"></i>Mon. - Sat.<br>10:00 am - 20:00 pm</p>
-          </div>
-        </div>
-       
-          <div class="fotdu">
-            <div class="">
-              <div class="ftr-widget information">
-                <h3 class="widget-tit">Information</h3>
-                <ul style="padding-left: 0;" class="mb-0">
-                  <li><a class="a2-foot" href="#">Shipping Policy</a></li>
-                  <li><a class="a2-foot" href="#">Compensation First</a></li>
-                  <li><a class="a2-foot" href="#">My Account</a></li>
-                  <li><a class="a2-foot" href="#">Return Policy</a></li>
-                  <li><a class="a2-foot" href="#">Check Outs</a></li>
-                  <li><a class="a2-foot" href="#">Customer Feedback</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="">
-              <div class="ftr-widget custom-service">
-                <h3 class="widget-tit">Custom Service</h3>
-                <ul style="padding-left: 0;" class="mb-0">
-                  <li><a class="a2-foot" href="#">Tems &amp; conditions</a></li>
-                  <li><a class="a2-foot" href="#">Payment Methods</a></li>
-                  <li><a class="a2-foot" href="#">Shipping &amp; returns</a></li>
-                  <li><a class="a2-foot" href="#">Locations We Ship To</a></li>
-                  <li><a class="a2-foot" href="#">Estimated Delivery Time</a></li>
-                  <li><a class="a2-foot" href="#">Help Center</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="">
-              <div class="ftr-widget contactus">
-                <h3 class="widget-tit">CONTACT US</h3>
-                <ul style="padding-left: 0;"  class="mb-0">
-                  <li><a class="a2-foot" href="#">About Us</a></li>
-                  <li><a class="a2-foot" href="#">Contact Us</a></li>
-                  <li><a class="a2-foot" href="#">Privacy Policy</a></li>
-                  <li><a class="a2-foot" href="#">Site Map</a></li>
-                  <li><a class="a2-foot" href="#">Tems &amp; conditions</a></li>
-                  <li><a class="a2-foot" href="#">Faqs</a></li>
-                </ul>
-              </div>
-            </div>
-           
-        </div>
-   
-    </div>
 
-  </footer>
-  <section class="tural"  style="background-color: #fcb818; height: 50px; display: flex; justify-content: center; align-items: center;"><i class="bi bi-at"></i>turalismylv</section>
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
     AOS.init();
-  </script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="js/slick.min.js"></script>
-  <script src="js/main.js"></script>
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
 
 </html>
