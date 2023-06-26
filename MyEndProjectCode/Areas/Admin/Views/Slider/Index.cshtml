@@ -1,0 +1,73 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1>Slider</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+
+
+                    <th>
+                        Name
+                    </th>
+                   
+                    <th>
+                        Offer
+                    </th>
+
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <a class="btn btn-outline-info" asp-action="Create" style="float:right;">Create </a>
+               
+                    <tr>
+                        <td class="py-1">
+                             
+                        </td>
+
+                        <td class="py-1">
+                          <span></span>  
+                        </td>
+
+
+                        <td class="py-1">
+                          <span></span>  
+                        </td>
+
+                         <td class="py-1">
+                          <span></span>  
+                        </td>
+
+                        <td>
+
+                            <a class="btn btn-outline-info" >Info</a>
+                            <a class="btn btn-outline-primary">Edit</a>
+
+                            <form style="display:inline-block;"  method="post">
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+
+
+                        </td>
+
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
