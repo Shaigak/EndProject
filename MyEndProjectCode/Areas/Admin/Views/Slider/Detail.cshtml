@@ -1,0 +1,55 @@
+﻿@using MyEndProjectCode.Models
+
+@model Slider
+
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<div class="container my-5">
+    <h1>Slider Detail</h1>
+
+
+    <span><b>Images</b></span>
+
+    <div class="slider-content">
+        <img style="width:100px; height:100px;" src="~/assets/images//@Model.Image "  />
+    </div>
+
+
+    <div>
+        <span><b>Title</b></span>
+
+        <p class="short-desc">
+            @Model.Title
+        </p>
+    </div>
+
+
+      <div>
+        <span><b> First Description</b></span>
+
+        <p class="short-desc">
+            @Model.Description
+        </p>
+    </div>
+
+
+       <div>
+        <span><b>Second Description</b></span>
+
+        <p class="short-desc">
+            @Model.EndDesc
+        </p>
+    </div>
+
+
+
+
+    <a class="btn btn-info mt-3" asp-action="Index">Back</a>
+
+
+</div>
+
