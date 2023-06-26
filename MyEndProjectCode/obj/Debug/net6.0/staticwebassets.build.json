@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "z7GvpbgYL0SzIDT4IaGoA0zVi4LktuWWUWLDEYzTCv8=",
+  "Hash": "mQPMcRUm7++Wxa+BtTYzBvEYQpbcnRpET53Trl/FlYk=",
   "Source": "MyEndProjectCode",
   "BasePath": "_content/MyEndProjectCode",
   "Mode": "Default",
@@ -2480,23 +2480,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\download.png"
-    },
-    {
-      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\e81bfbe9-02ba-4c8e-80da-37405b983d11 4a016599-7438-43c7-b395-57215d57d20a pexels-cottonbro-studio-4709289.jpg",
-      "SourceId": "MyEndProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
-      "BasePath": "_content/MyEndProjectCode",
-      "RelativePath": "assets/images/e81bfbe9-02ba-4c8e-80da-37405b983d11 4a016599-7438-43c7-b395-57215d57d20a pexels-cottonbro-studio-4709289.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\e81bfbe9-02ba-4c8e-80da-37405b983d11 4a016599-7438-43c7-b395-57215d57d20a pexels-cottonbro-studio-4709289.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\find-img-710x539.png",

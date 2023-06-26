@@ -134,6 +134,121 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            Slider dbSlider = await _context.Sliders.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (dbSlider is null) return NotFound();
+
+
+            SliderUpdateVM model = new()
+            {
+                Id = dbSlider.Id,
+                Image = dbSlider.Image,
+                Title = dbSlider.Title,
+                Description = dbSlider.Description,
+                EndDesc = dbSlider.EndDesc
+
+            };
+
+            return View(model);
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int? id, SliderUpdateVM slider)
+        {
+
+            try
+            {
+                if (id == null) return BadRequest();
+
+
+                Slider dbSlider = await _context.Sliders.FirstOrDefaultAsync(m => m.Id == id);
+
+                if (dbSlider is null) return NotFound();
+
+
+                SliderUpdateVM model = new()
+                {
+                    Id = dbSlider.Id,
+                    Image = dbSlider.Image,
+                    Title = dbSlider.Title,
+                    Description = dbSlider.Description,
+                    EndDesc = dbSlider.EndDesc
+                };
+
+
+
+                if (slider.Photo != null)
+                {
+
+                    if (!slider.Photo.ContentType.Contains("image/"))  
+                    {
+                        ModelState.AddModelError("Photo", "File type must be image");
+
+                        return View(dbSlider);
+
+                    }
+
+                    string oldPath = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images", dbSlider.Image); 
+
+
+                    if (System.IO.File.Exists(oldPath))
+                    {
+                        System.IO.File.Delete(oldPath);
+                    }
+
+                    string fileName = Path.Combine(Guid.NewGuid().ToString() + "_" + slider.Photo.FileName);
+
+                    string newPath = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images", fileName);
+
+
+                    using (FileStream stream = new FileStream(newPath, FileMode.Create)) 
+                    {
+                        await slider.Photo.CopyToAsync(stream);
+                    }
+
+                    dbSlider.Image = fileName;
+
+                }
+                else
+                {
+                    Slider newSlider = new()
+                    {
+                        Image = dbSlider.Image
+                    };
+                }
+
+                dbSlider.EndDesc = slider.EndDesc;
+                dbSlider.Description = slider.Description;
+                dbSlider.Title = slider.Title;
+
+
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+
+
+
+
+
 
     }
 }
