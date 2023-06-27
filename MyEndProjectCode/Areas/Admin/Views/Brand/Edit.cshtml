@@ -1,0 +1,42 @@
+﻿@using MyEndProjectCode.Areas.View_Models
+
+
+@model BrandUpdateVM
+
+
+
+
+<div class="container my-5">
+    <h1>Brand </h1>
+
+    <div class="slider-content">
+
+     <img style="width:100px; height:100px;" src="~/assets/images/@Model.Image"/>
+
+    </div>
+
+
+    <form class="form-sample" asp-action="Edit" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data" >
+   
+     
+     
+     
+     <input  class="form-control inputsize" id="customFile" asp-for="Photo"  />
+
+   
+
+
+     <div class="buttons my-3">
+     <button type="submit" class="btn btn-primary mr-2">Submit</button>
+     <a class="btn btn-light" asp-action="Index">Cancel</a>
+     </div>
+
+    </form>
+
+    
+
+</div>
+
+
+
+
