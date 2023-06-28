@@ -1,0 +1,70 @@
+﻿@using MyEndProjectCode.Areas.View_Models
+
+@model ProductUpdateVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container my-5">
+    <h1>Product Edit</h1>
+
+  @*  @foreach (var item in Model.Images)
+    {
+        <div class="img-detail">
+            <img src="~/assets/images/@item.Image" style="width:250px;height:200px" />
+        </div>
+    }*@
+   
+
+    <form class="form-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <label for="formFile" class="form-label">Choose a new image for product</label>
+        <input class="form-control" id="customFile" asp-for="Photos" />
+
+   
+        <label for="formFile" class="form-label">Name</label>
+        <textarea class="form-control" id="slider-title-text" asp-for="Name" rows="3"></textarea>
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+        <label for="formFile" class="form-label">Description</label>
+        <input type="text mt-3" class="form-control" id="customFile" asp-for="Description" />
+        <span class="text-danger" asp-validation-for="Description"></span>
+
+        <label for="formFile" class="form-label">Price</label>
+        <textarea class="form-control" id="slider-title-text" asp-for="Price" rows="3"></textarea>
+        <span class="text-danger" asp-validation-for="Price"></span>
+
+        <label for="formFile" class="form-label">Sale Count</label>
+        <textarea class="form-control" id="slider-title-text" asp-for="SaleCount" rows="3"></textarea>
+        <span class="text-danger" asp-validation-for="SaleCount"></span>
+
+        <label for="formFile" class="form-label">Stock Count</label>
+        <textarea class="form-control" id="slider-title-text" asp-for="StockCount" rows="3"></textarea>
+        <span class="text-danger" asp-validation-for="StockCount"></span>
+
+     
+       
+        <div class="form-group">
+            <label class="my-2">Add Tag</label>
+            <select class="form-control" id="customFile" asp-for="TagIds" asp-items="@ViewBag.Tags"></select>
+        </div>
+        <div class="form-group">
+            <label class="my-2">Add Category</label>
+            <select class="form-control" id="customFile" asp-for="CategoryIds" asp-items="@ViewBag.Categories"></select>
+        </div>
+
+        <div class="form-group">
+            <label class="my-2">Add Category</label>
+            <select class="form-control" id="customFile" asp-for="BrandIds" asp-items="@ViewBag.Brands"></select>
+        </div>
+
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+
+    </form>
+
+</div>
+

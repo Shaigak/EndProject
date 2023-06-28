@@ -202,6 +202,185 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            ViewBag.Categories = await GetCategoryAsync();
+            ViewBag.Tags = await GetTagAsync();
+            ViewBag.Brands = await GetBrandAsync();
+
+
+            if (id == null) return BadRequest();
+            Product dbProduct = await _productService.GetById(id);
+            if (dbProduct == null) return NotFound();
+
+            ProductUpdateVM model = new()
+            {
+                Id = dbProduct.Id,
+                Images = dbProduct.ProductImages.ToList(),
+                Name = dbProduct.Name,
+                Description = dbProduct.Description, 
+                Price = dbProduct.Price,
+                SaleCount = dbProduct.SaleCount,
+                StockCount = dbProduct.StockCount,
+                TagIds = dbProduct.ProductTags.Select(m => m.Tag.Id).ToList(),
+                CategoryIds = dbProduct.ProductCategories.Select(m => m.Category.Id).ToList(),
+              
+
+            };
+
+            return View(model);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int? id, ProductUpdateVM model)
+        {
+            ViewBag.categories = await GetCategoryAsync();
+            ViewBag.tags = await GetTagAsync();
+            ViewBag.Brands = await GetBrandAsync();
+
+
+
+            if (id is null) return BadRequest();
+
+
+            Product product = await _productService.GetById((int)id);
+
+            if (product is null) return NotFound();
+
+            //if (!ModelState.IsValid)
+            //{
+            //    return View();
+            //}
+
+            List<ProductImage> productImages = new();
+            List<ProductCategory> productCategories = new();
+            List<ProductTag> productTags = new();
+            List<ProductBrand> productBrands = new();
+
+   
+
+
+
+           
+            if (model.Photos is not null)
+            {
+                foreach (var photo in model.Photos)
+                {
+                    if (!photo.CheckFileType("image/"))
+                    {
+                        ModelState.AddModelError("Photo", "File type must be image");
+                        return View();
+                    }
+
+                    //if (!photo.CheckFileSize(500))
+                    //{
+                    //    ModelState.AddModelError("Photo", "Image size must be max 200kb");
+                    //    return View();
+                    //}
+                }
+
+                foreach (var photo in model.Photos)
+                {
+                    string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+                    string path = FileHelper.GetFilePath(_webHostEnvironment.WebRootPath, "assets/images", fileName);
+                    await FileHelper.SaveFileAsync(path, photo);
+
+                    ProductImage productImage = new()
+                    {
+                        Image = fileName
+                    };
+
+                    productImages.Add(productImage);
+                }
+                product.ProductImages = productImages;
+            }
+            else
+            {
+                model.Images = product.ProductImages.ToList();
+            }
+
+            if (model.CategoryIds.Count > 0)
+            {
+                foreach (var cateId in model.CategoryIds)
+                {
+                    ProductCategory productCategory = new()
+                    {
+                        CategoryId = cateId
+                    };
+
+                    productCategories.Add(productCategory);
+                }
+                product.ProductCategories = productCategories;
+            }
+            else
+            {
+                ModelState.AddModelError("CategoryIds", "Don't be empty");
+                return View();
+            }
+
+
+
+            if (model.TagIds.Count > 0)
+            {
+                foreach (var tagId in model.TagIds)
+                {
+                    ProductTag productTag = new()
+                    {
+                        TagId = tagId
+                    };
+
+                    productTags.Add(productTag);
+                }
+                product.ProductTags = productTags;
+            }
+            else
+            {
+                ModelState.AddModelError("TagIds", "Don't be empty");
+                return View();
+            }
+
+
+
+            if (model.BrandIds.Count > 0)
+            {
+                foreach (var brandId in model.BrandIds)
+                {
+                    ProductBrand productBrand = new()
+                    {
+                         BrandProId = brandId
+                    };
+
+                    productBrands.Add(productBrand);
+                }
+                product.ProductBrands = productBrands;
+            }
+            else
+            {
+                ModelState.AddModelError("TagIds", "Don't be empty");
+                return View();
+            }
+
+            product.Id = model.Id;
+            product.Name = model.Name;
+            product.Price = model.Price;
+            product.SaleCount = model.SaleCount;
+            product.StockCount = model.StockCount;
+            product.Description = model.Description;
+
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+
+
+        }
+
+
+
+
         private async Task<SelectList> GetCategoryAsync()
         {
             List<Category> categories = await _context.Categories.ToListAsync();
