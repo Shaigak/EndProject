@@ -22,7 +22,7 @@ namespace MyEndProjectCode.Services
                                                                    
                                                                         .Include(m => m.ProductCategories)?
 
-                                                                        .Take(6)
+                                                                        //.Take(6)
 
                                                                         .ToListAsync();
             }

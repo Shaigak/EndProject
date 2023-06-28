@@ -16,7 +16,7 @@ namespace MyEndProjectCode.Services
 
         public async Task<List<Tag>> GetAllTags()
         {
-            return await _context.Tags.Include(m => m.ProductTags)?/*ThenInclude(m => m.Product)?*/.Where(m => !m.SoftDelete).ToListAsync();
+            return await _context.Tags.Where(m => !m.SoftDelete).ToListAsync();
         }
     }
 }

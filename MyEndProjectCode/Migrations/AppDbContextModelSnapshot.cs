@@ -540,7 +540,7 @@ namespace MyEndProjectCode.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<bool>("SoftDelete")
@@ -752,15 +752,19 @@ namespace MyEndProjectCode.Migrations
 
             modelBuilder.Entity("MyEndProjectCode.Models.ProductTag", b =>
                 {
-                    b.HasOne("MyEndProjectCode.Models.Product", null)
+                    b.HasOne("MyEndProjectCode.Models.Product", "Product")
                         .WithMany("ProductTags")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MyEndProjectCode.Models.Tag", "Tag")
                         .WithMany("ProductTags")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Product");
 
                     b.Navigation("Tag");
                 });

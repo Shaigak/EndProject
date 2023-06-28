@@ -1,0 +1,93 @@
+﻿@using MyEndProjectCode.Areas.View_Models
+
+
+@model ProductCreateVM
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-5 ">
+
+    <form class="forms-sample" asp-action="Create" method="post" enctype="multipart/form-data">
+
+
+       
+        <span>Image</span>
+
+        <input class="form-control" id="customFile" asp-for="Photos" />
+
+        <span class="text-danger" asp-validation-for="Photos"></span>
+
+
+
+
+         <span>Name</span>
+
+        <input class="form-control" id="customFile" asp-for="Name" />
+
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+
+         <span>Price</span>
+
+        <input class="form-control" id="customFile" asp-for="Price" />
+
+        <span class="text-danger" asp-validation-for="Price"></span>
+
+     
+
+         <span>Rate</span>
+
+        <input class="form-control" id="customFile" asp-for="Rate" />
+
+        <span class="text-danger" asp-validation-for="Rate"></span>
+
+         <span>Description</span>
+
+        <input class="form-control" id="customFile" asp-for="Description" />
+
+        <span class="text-danger" asp-validation-for="Description"></span>
+
+
+        <input class="form-control" id="customFile" asp-for="StockCount" />
+
+        <span class="text-danger" asp-validation-for="StockCount"></span>
+
+
+       
+
+
+
+
+
+
+        <div class="form-group">
+            <span>Category</span>
+            <select class="form-control" id="customFile" asp-for="CategoryIds" asp-items="@ViewBag.Categories"></select>
+        </div>
+
+
+       <div class="form-group">
+            <span>Tags</span>
+            <select class="form-control" id="customFile" asp-for="TagIds" asp-items="@ViewBag.Tags"></select>
+        </div>
+
+
+        
+        <div class="form-group">
+            <span>Brands</span>
+            <select class="form-control" id="customFile" asp-for="BrandIds" asp-items="@ViewBag.Brands"></select>
+        </div>
+        
+
+        <div class="buttons my-3">
+
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+
+</div>
+
