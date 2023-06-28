@@ -1,0 +1,77 @@
+﻿@using MyEndProjectCode.Models
+
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1>Products</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+
+
+                    <th>
+                        Name
+                    </th>
+                   
+                    <th>
+                        Price
+                    </th>
+
+             
+                    
+                    <th>
+                        Operations
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <a class="btn btn-outline-info" asp-action="Create" style="float:right;">Create </a>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="py-1">
+                              <img class="imag" src="~/assets/images/@item.ProductImages.FirstOrDefault().Image"/>
+                        </td>
+
+                        <td class="py-1">
+                          <span>@item.Name</span>  
+                        </td>
+
+
+                        <td class="py-1">
+                          <span>@item.Price</span>  
+                        </td>
+
+                        
+                        
+               
+
+                        <td>
+
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@item.Id">Info</a>
+                            <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                            <form style="display:inline-block;" asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+
+
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
