@@ -6,5 +6,7 @@ namespace MyEndProjectCode.Services.Interfaces
     {
 
         Task<List<Blog>> GetAll();
+
+        Task<Blog> GetFullDataById(int id);
     }
 }

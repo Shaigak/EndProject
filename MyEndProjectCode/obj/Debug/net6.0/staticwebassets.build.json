@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YFEk7XI5RHABVsU5pTkzAaw5HKZVX8xaAlM1V8ZXojE=",
+  "Hash": "dZL/VzJ1aWFY6cLmmSO7VRY7upfsKk1lSLRfy+OX6Oo=",
   "Source": "MyEndProjectCode",
   "BasePath": "_content/MyEndProjectCode",
   "Mode": "Default",
@@ -2414,6 +2414,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\bren.png"
     },
     {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\c852b93c-3c97-4455-9079-01f0b9190ab8_5.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/c852b93c-3c97-4455-9079-01f0b9190ab8_5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\c852b93c-3c97-4455-9079-01f0b9190ab8_5.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\car1.jpg",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -2480,6 +2497,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\car4jpg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\cd9bbc20-684a-4e78-b435-92493e55d1e4 blog-detail-img2.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/cd9bbc20-684a-4e78-b435-92493e55d1e4 blog-detail-img2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\cd9bbc20-684a-4e78-b435-92493e55d1e4 blog-detail-img2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\d2dadae9-1e37-4a47-a00e-1ce60f5a5f71 car4jpg.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/d2dadae9-1e37-4a47-a00e-1ce60f5a5f71 car4jpg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\d2dadae9-1e37-4a47-a00e-1ce60f5a5f71 car4jpg.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\deal-bg.jpg",

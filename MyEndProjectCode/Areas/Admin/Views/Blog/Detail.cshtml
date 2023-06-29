@@ -1,0 +1,67 @@
+﻿@using MyEndProjectCode.Models
+@model Blog
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+<div class="container my-5">
+    <h1>Blog Detail</h1>
+
+
+    <span><b>Images</b></span>
+
+    <div class="slider-content">
+        <img style="width:100px; height:100px;" src="~/assets/images/@Model.Images.FirstOrDefault().Image "  />
+    </div>
+
+        <div>
+     
+    </div>
+
+
+
+    <div>
+        <span><b>Title</b></span>
+
+        <p class="short-desc">
+            @Model.Title
+        </p>
+    </div>
+
+
+    
+
+    <div>
+        <span><b>Description</b></span>
+
+        <p class="short-desc">
+            @Model.Description
+        </p>
+    </div>
+
+
+       <div>
+        <span><b>CreateDate</b></span>
+
+        <p class="short-desc">
+            @Model.CreateDate
+        </p>
+    </div>
+
+
+        
+   
+
+
+
+
+    <a class="btn btn-info mt-3" asp-action="Index">Back</a>
+
+
+</div>
+
+
+

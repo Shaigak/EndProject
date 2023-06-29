@@ -17,5 +17,15 @@ namespace MyEndProjectCode.Services
         {
             return await _context.Blogs.Where(m => !m.SoftDelete).Include(m => m.Images).ToListAsync();
         }
+
+
+
+        public async Task<Blog> GetFullDataById(int id)
+        {
+            return await _context.Blogs.Include(m => m.Images)
+                                                                        
+
+                                                                         .FirstOrDefaultAsync(m => m.Id == id);
+        }
     }
 }
