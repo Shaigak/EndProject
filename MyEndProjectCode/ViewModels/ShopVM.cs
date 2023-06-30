@@ -7,6 +7,9 @@ namespace MyEndProjectCode.ViewModels
     {
       public List<Product> Products { get; set; }
 
+
+      public List<Product> AllProducts { get; set; }
+
       public List<Category> Categories { get; set; }
 
       public List<BrandPro> BrandPros { get; set; }

@@ -22,8 +22,25 @@ namespace MyEndProjectCode.Services
 
                                                                     .Include(m => m.ProductCategories)?
 
-                                                                    .Take(4)
+                                                                    .Take(6)
                                                                    
+
+                                                                    .ToListAsync();
+        }
+
+
+
+        public async Task<List<Product>> GetAllProduct()
+        {
+            return await _context.Products.Where(m => !m.SoftDelete)
+                                                                    .Include(m => m.ProductImages)
+
+                                                                    .Include(m => m.ProductTags)
+
+                                                                    .Include(m => m.ProductCategories)?
+
+                                                                    
+
 
                                                                     .ToListAsync();
         }

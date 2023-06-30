@@ -78,3 +78,21 @@
 .cater{
     margin-left:350px;
 }
+
+
+.page-link.active {
+    background-color: gold;
+}
+
+.words{
+   color:darkgoldenrod;
+
+}
+
+.coun{
+    color:black;
+}
+
+.all{
+    font-size:17px;
+}

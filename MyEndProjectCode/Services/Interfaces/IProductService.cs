@@ -10,5 +10,7 @@ namespace MyEndProjectCode.Services.Interfaces
         Task<List<Product>> GetPaginatedDatas(int page, int take);
 
         Task<int> GetCountAsync();
+
+        Task<List<Product>> GetAllProduct();
     }
 }

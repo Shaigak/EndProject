@@ -37,13 +37,16 @@
                         <div class="categories">
                             <h4>Product categories</h4>
 
-                            <li>
-                                <a href="#" class="allprod">
-         
-                                    All <span>(@Model.Products.Count)</span>
-                                </a>
-                            </li>
+                             
+                            <a href="#"  class="allprod ">
 
+                            <span class="words all">All</span> <span class="coun">(@Model.AllProducts.Count)</span>
+                            </a>
+                           
+
+
+
+                            
 
                             @foreach (var item in Model.Categories)
                             {
@@ -51,22 +54,24 @@
 
 
                                     <a href="" data-id="@item.Id" class="cate">
-                                        @item.Name (@item.ProductCategories.Count())
+                                       <span class="words">@item.Name</span>   <span class="coun">(@item.ProductCategories.Count())</span>
                                     </a>
 
 
                                 </ul>
                             }
                         </div>
-                        <div class="categories brand">
+                        <div class="categories brand ">
                             <h4>BY BRAND</h4>
                             @foreach (var item in Model.BrandPros)
                             {
                                 <ul>
-
-                                    <li>@item.Name (@item.ProductBrands.Count()) </li>
-
+                                    <a href="" data-id="@item.Id" class="brandcl">
+                                      <span class="words">@item.Name</span>  <span class="coun">(@item.ProductBrands.Count())</span> 
+                                    </a>
                                 </ul>
+
+
 
                             }
                         </div>
@@ -79,11 +84,15 @@
                             @foreach (var item in Model.Tags)
                             {
 
-                                <div class="d-flex">
-                                    <ul>
-                                        <a href="#">@item.Year  </a>
-                                    </ul>
-                                </div>
+
+                                
+                                    <li>
+                                        <a href="#" data-id="@item.Id" class="tagn">
+                                       <span class="words">TagCode :</span>  <span class="coun">@item.Year</span>  
+                                    </a>
+                                    </li>
+                               
+
 
 
                             }
@@ -109,26 +118,26 @@
 
 
                     </div>
-@*
+                    @*
                     <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
+                    <ul class="pagination">
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    </li>
 
-                                @for (int i = 1; i < Model.PaginateProduct.TotalPage; i++)
-                                {
-                                    <li class="page-item active @(Model.PaginateProduct.CurrentPage == i ? "disabled" : "")">
-                                        <a class="page-link" asp-controller="Shop" asp-action="Index" asp-route-page="@i">@i</a></li>
-                                }
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
+                    @for (int i = 1; i < Model.PaginateProduct.TotalPage; i++)
+                    {
+                    <li class="page-item active @(Model.PaginateProduct.CurrentPage == i ? "disabled" : "")">
+                    <a class="page-link" asp-controller="Shop" asp-action="Index" asp-route-page="@i">@i</a></li>
+                    }
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    </li>
+                    </ul>
                     </nav>*@
 
 
@@ -137,10 +146,14 @@
                             <ul class="pagination justify-content-center">
 
 
-                                @for (int i = 1; i < Model.PaginateProduct.TotalPage; i++)
+                                @for (int i = 1; i <= Model.PaginateProduct.TotalPage; i++)
                                 {
-                                    <li class="page-item active @(Model.PaginateProduct.CurrentPage == i ? "disabled" : "")"><a class="page-link" asp-controller="Shop" asp-action="Index" asp-route-page="@i">@i</a></li>
+                                    <li class="page-item @*active*@ @(Model.PaginateProduct.CurrentPage == i ? "disabled" : "")">
+                                        <a class="page-link" asp-controller="Shop" asp-action="Index" asp-route-page="@i">@i</a>
+                                    </li>
                                 }
+
+
                                 <li class="page-item">
                                     <a class="page-link" href="#" aria-label="Next">&raquo;</a>
                                 </li>

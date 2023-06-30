@@ -25,7 +25,7 @@ namespace MyEndProjectCode.Controllers
             _tagService = tagService;
         }
 
-        public async Task <IActionResult> Index(int page = 1, int take =4)
+        public async Task <IActionResult> Index(int page = 1, int take =6)
 
         {
 
@@ -36,7 +36,10 @@ namespace MyEndProjectCode.Controllers
             Paginate<Product> paginateDatas = new(paginateProd, page, pageCount);
 
             List<Product> products = await _productService.GetAll();
-           
+
+            List<Product> allproducts = await _productService.GetAllProduct();
+
+
             List<Category> categories = await _categoryService.GetCategories();
            
             List<BrandPro> brandPros = await _context.BrandPros.Include(m=>m.ProductBrands).ToListAsync();
@@ -51,6 +54,7 @@ namespace MyEndProjectCode.Controllers
                 BrandPros = brandPros,
                 Tags = tags,
                 PaginateProduct = paginateDatas,
+                AllProducts=allproducts
 
             };
 
@@ -70,6 +74,31 @@ namespace MyEndProjectCode.Controllers
         public async Task<IActionResult> GetProductsByCategory(int id)
         {
             List<Product> products = await _context.ProductCategories.Where(m => m.Category.Id == id).Include(m=>m.Product).ThenInclude(m=>m.ProductImages).Select(m => m.Product).ToListAsync();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+
+
+        public async Task<IActionResult> GetProductsByBrandName(int? id)
+        {
+            List<Product> products = await _context.ProductBrands.Where(m => m.BrandProId == id).Include(m=>m.Product).ThenInclude(m=>m.ProductImages).Select(m => m.Product).ToListAsync();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        public async Task<IActionResult> GetProductsTagName(int? id)
+        {
+            List<Product> products = await _context.ProductTags.Where(m => m.TagId == id).Include(m => m.Product).ThenInclude(m => m.ProductImages).Select(m => m.Product).ToListAsync();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+
+        public async Task<IActionResult> GetAllProduct()
+        {
+            List<Product> products = await _productService.GetAllProduct();
+
 
             return PartialView("_ProductsPartial", products);
         }
