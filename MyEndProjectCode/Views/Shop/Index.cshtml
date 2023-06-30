@@ -2,6 +2,14 @@
 
 
 @model ShopVM
+
+
+
+@{
+    ViewData["Title"] = "Index";
+    ////int sumProducts = 0;
+    //int sumColor = 0;
+}
 <section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="dealofday intro aos-init aos-animate first-sec">
     <div data-aos="fade-right" class="divday">
         <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">BLOG</span></p>
@@ -28,11 +36,24 @@
                         </div>
                         <div class="categories">
                             <h4>Product categories</h4>
+
+                            <li>
+                                <a href="#" class="allprod">
+         
+                                    All <span>(@Model.Products.Count)</span>
+                                </a>
+                            </li>
+
+
                             @foreach (var item in Model.Categories)
                             {
                                 <ul>
 
-                                    <li>@item.Name (62)</li>
+
+                                    <a href="" data-id="@item.Id" class="cate">
+                                        @item.Name (@item.ProductCategories.Count())
+                                    </a>
+
 
                                 </ul>
                             }
@@ -43,84 +64,118 @@
                             {
                                 <ul>
 
-                                    <li>@item.Name</li>
+                                    <li>@item.Name (@item.ProductBrands.Count()) </li>
 
                                 </ul>
 
                             }
                         </div>
 
+
+
+
                         <div class="tags">
                             <h4>BY TAGS</h4>
-                          @foreach (var item in Model.Tags)
-                          {
-                                <ul>
-                                <a href="#">@item.Year</a>
-                                
-                            </ul>
-                          }
+                            @foreach (var item in Model.Tags)
+                            {
+
+                                <div class="d-flex">
+                                    <ul>
+                                        <a href="#">@item.Year  </a>
+                                    </ul>
+                                </div>
+
+
+                            }
                         </div>
                     </div>
 
                     <div class="banner-img img-full">
                         <a href="#"><img class="img-fluid mx-auto" src="~/assets/images/banner.jpg" alt=""></a>
                     </div>
-                </div>
-                <div class="col-lg-9 products-side">
-                    <div class="row">
-                        @foreach (var item in Model.Products)
-                        {
-                            <div class="col-lg-4 col-md-6 pb-5">
-                                <div class="productt" id="1">
-                                    <div class="product-image">
-                                        <img src="~/assets/images/@item.ProductImages.FirstOrDefault().Image" alt="">
-                                        <div class="basket-wishlist-compare d-flex justify-content-center">
-                                            <div class="add-basket text-center">
-                                                <i class="fas fa-shopping-basket"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-inf">
-                                        <h5> <a class="productt-name" href="./product-single.html">@item.Name</a> </h5>
-                                        <p><span>$</span><span class="price">@item.Price</span></p>
-                                    </div>
-                                </div>
-                            </div>
 
-                        }
-                        <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
-                            <ul class="pagination">
+
+                </div>
+
+
+                <div class="col-lg-9 products-side">
+                    <div class="row product-grid-view">
+
+
+
+                        <partial name="_ProductsPartial" model="@Model.PaginateProduct.Datas" />
+
+
+
+
+                    </div>
+@*
+                    <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                                @for (int i = 1; i < Model.PaginateProduct.TotalPage; i++)
+                                {
+                                    <li class="page-item active @(Model.PaginateProduct.CurrentPage == i ? "disabled" : "")">
+                                        <a class="page-link" asp-controller="Shop" asp-action="Index" asp-route-page="@i">@i</a></li>
+                                }
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>*@
+
+
+                    <div class="pagination-area">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+
+
+                                @for (int i = 1; i < Model.PaginateProduct.TotalPage; i++)
+                                {
+                                    <li class="page-item active @(Model.PaginateProduct.CurrentPage == i ? "disabled" : "")"><a class="page-link" asp-controller="Shop" asp-action="Index" asp-route-page="@i">@i</a></li>
+                                }
                                 <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
+                                    <a class="page-link" href="#" aria-label="Next">&raquo;</a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
+
+
                             </ul>
                         </nav>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
             </div>
     </section>
 
-    </main>
-</section>
 
+</section>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 <script type="text/javascript" src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
 
-</html>
+<script src="~/assets/js/script.js"></script>
+
+
+

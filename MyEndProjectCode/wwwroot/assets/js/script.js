@@ -1,8 +1,24 @@
-﻿$(document).ready(function () {
+﻿
+$(function () {
+    $(document).on("click", ".cate", function (e) {
+        e.preventDefault();
 
-    $(document).on("click", ".mainsearch", function (e) {
+        let categoryId = $(this).attr("data-id");
 
-        console.log("salam")
+        let product = $(".product-grid-view")
+
+        $.ajax({
+
+            url: `shop/GetProductsByCategory?id=${categoryId}`,
+            type: "Get",
+
+            success: function (res) {
+                    
+                $(product).html(res)
+                console.log(res)
+            }
+        })
+
     })
 
 })

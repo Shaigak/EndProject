@@ -1,4 +1,5 @@
-﻿using MyEndProjectCode.Models;
+﻿using MyEndProjectCode.Helpers;
+using MyEndProjectCode.Models;
 
 namespace MyEndProjectCode.ViewModels
 {
@@ -11,6 +12,8 @@ namespace MyEndProjectCode.ViewModels
       public List<BrandPro> BrandPros { get; set; }
 
       public List<Tag> Tags { get; set; }
+
+      public Paginate<Product> PaginateProduct { get; set; }
 
     }
 }

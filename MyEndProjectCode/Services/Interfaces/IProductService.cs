@@ -6,5 +6,9 @@ namespace MyEndProjectCode.Services.Interfaces
     {
         Task<Product> GetById(int id);
         Task<List<Product>> GetAll();
+
+        Task<List<Product>> GetPaginatedDatas(int page, int take);
+
+        Task<int> GetCountAsync();
     }
 }

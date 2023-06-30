@@ -15,7 +15,7 @@ namespace MyEndProjectCode.Services
         }
         public async Task<List<Category>> GetCategories()
         {
-            return await _context.Categories.ToListAsync();
+            return await _context.Categories.Include(m=>m.ProductCategories).ToListAsync();
         }
     }
 }
