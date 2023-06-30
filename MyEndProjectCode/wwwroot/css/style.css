@@ -250,8 +250,9 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  padding-left: 15%;
+  /*padding-left: 15%;*/
   padding-right: 15%;
+  margin-left:150px;
 }
 .p-categoryrow .p-category-div {
  

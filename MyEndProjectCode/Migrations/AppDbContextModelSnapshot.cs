@@ -312,6 +312,10 @@ namespace MyEndProjectCode.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("SoftDelete")
                         .HasColumnType("bit");
 

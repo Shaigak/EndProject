@@ -1,0 +1,52 @@
+﻿@using MyEndProjectCode.Models
+@using MyEndProjectCode.ViewModels
+
+@model IEnumerable<Contact>
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@foreach (var item in Model)
+{
+    <div class="container my-5">
+    <h1>Contact User</h1>
+
+
+    <div>
+        <span><b>FirstName </b></span>
+
+        <p class="short-desc">
+            @item.FullName
+        </p>
+    </div>
+
+    <div>
+        <span><b>LastName</b></span>
+
+        <p class="short-desc">
+            @item.Email
+        </p>
+    </div>
+
+    <div>
+        <span><b>Phone</b></span>
+
+        <p class="short-desc">
+            @item.Subject
+        </p>
+    </div>
+
+
+    <div>
+        <span><b>Message</b></span>
+
+        <p class="short-desc">
+            @item.Message
+        </p>
+    </div>
+</div>
+}
+
+
+

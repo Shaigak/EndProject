@@ -7,7 +7,7 @@ namespace MyEndProjectCode.Models
 
 
 
-        [Required]
+      
         public string FullName { get; set; }
 
         [Required]
@@ -17,5 +17,9 @@ namespace MyEndProjectCode.Models
         [Required]
         [DataType(DataType.Text)]
         public string Subject { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        public string Message { get; set; }
     }
 }
