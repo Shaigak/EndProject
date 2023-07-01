@@ -1,13 +1,15 @@
-﻿
+﻿@using MyEndProjectCode.ViewModels.Account
+@model LoginVM
 
- <section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="first-sec dealofday intro aos-init aos-animate">
-        <div data-aos="fade-right" class="divday">
-          <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">LOGIN</span></p>
-          <h4 class="h4-intro">LOGIN</h4>
-        </div>
- </section>
 
- <section class="login-sec">  
+<section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="first-sec dealofday intro aos-init aos-animate">
+    <div data-aos="fade-right" class="divday">
+        <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">LOGIN</span></p>
+        <h4 class="h4-intro">LOGIN</h4>
+    </div>
+</section>
+
+<section class="login-sec">
     <div class="login-div">
         <div>
             <div class="login-left">
@@ -17,30 +19,47 @@
                 <a class="btn btn1 btn-login" href="register.html"><span>Create Now</span><i class="icon-next"></i></a>
             </div>
         </div>
-      
+
         <div class="login-right">
             <div class="form-heading">
                 <h2 class="form-tit">Returning Customer</h2>
                 <p class="form-tit2">I am a returning customer</p>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-group">
-                    <input type="email" class="form-control-1" placeholder="Email Address *" name="email">
-                  </div>
+            </div>
+            <div class="text-danger" asp-validation-summary="All"></div>
+           
+            
+            <form method="post" asp-action="Login">
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input type="email" class="form-control-1" placeholder="Email Address *" asp-for="Email">
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input type="password" class="form-control-2" placeholder="Password *" asp-for="Password">
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12">
-                  <div class="form-group">
-                    <input type="password" class="form-control-2" placeholder="Password *" name="password">
-                  </div>
+                <div class="form-group">
+                    <button type="submit" class="btn submit-btn">Sign In</button>
                 </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn submit-btn">Sign In</button>
-              </div>
+
+            </form>
         </div>
     </div>
 
- </section>
-        
+</section>
 
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+
+
+
+ }

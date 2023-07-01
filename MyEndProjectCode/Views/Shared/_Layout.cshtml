@@ -29,9 +29,32 @@
                 <a class="mail sosials" href=""><i style="margin-right: 5px;" class="bi bi-envelope foot-icon"></i><span class="mt">shaigak@code.edu.az</span></a>
                 <a class="tel sosials" href="#"><i class="bi bi-telephone-fill foot-icon"></i><span class="mt">+994508009988</span></a>
             </div>
+
+         
+           <span class="user">@User.Identity.Name</span> 
+           
             <div class="sosial">
-                <a class="sosials" asp-controller="Account" asp-action="Login" class="p-2 pl-0"><span class="login">LOG IN</span></a>
-                <a class="sosials"asp-controller="Account" asp-action="Register" class="p-2 pl-0"><span class="login">SIGN UP</span></a>
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                       <button type="submit">Logout</button>
+                    </form>
+                   
+                  
+                       
+                   
+
+                }
+                else
+                {
+                    <a class="sosials" asp-controller="Account" asp-action="Login" class="p-2 pl-0"><span class="login">LOG IN</span></a>
+                    <a class="sosials" asp-controller="Account" asp-action="Register" class="p-2 pl-0"><span class="login">SIGN UP</span></a>
+
+                }
+
+                @*    <a class="sosials" asp-controller="Account" asp-action="Login" class="p-2 pl-0"><span class="login">LOG IN</span></a>
+                <a class="sosials"asp-controller="Account" asp-action="Register" class="p-2 pl-0"><span class="login">SIGN UP</span></a>*@
                 <a class="sosials" href="#"><i class="fa-brands fa-square-twitter"></i></a></a>
                 <a class="sosials" href="#"><i class="fa-brands fa-square-facebook"></i></a>
                 <a class="sosials" href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -222,5 +245,6 @@
 <script src="https://kit.fontawesome.com/020cd902c8.js" crossorigin="anonymous"></script>
 <script src="~/assets/js/main.js"></script>
 <script src="~/assets/js/script.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
 </html>

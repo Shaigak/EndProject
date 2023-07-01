@@ -1,50 +1,55 @@
-﻿
+﻿@using MyEndProjectCode.ViewModels.Account
+@model RegisterVM
 
- <section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="first-sec dealofday intro aos-init aos-animate">
-        <div data-aos="fade-right" class="divday">
-          <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">REGISTER</span></p>
-          <h4 class="h4-intro">REGISTER</h4>
-        </div>
- </section>
+<section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="first-sec dealofday intro aos-init aos-animate">
+    <div data-aos="fade-right" class="divday">
+        <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">REGISTER</span></p>
+        <h4 class="h4-intro">REGISTER</h4>
+    </div>
+</section>
 
- <section class="login-sec">  
+<section class="login-sec">
     <div class="login-div">
-        <div class="login-right">
+        <div class="login-right" asp-validation-summary="All" >
             <div class="form-heading">
                 <h2 class="form-tit">Create a New Account</h2>
                 <p class="form-tit2">Add Your Personal Details</p>
-              </div>
-              <form action>
+            </div>
+            <form  method="post" asp-action="Register">
                 <div class="row">
                     <div class="col-12">
-                      <div class="form-group">
-                        <input type="email" class="form-control-1" placeholder="First Name*" name="email">
-                      </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-1" placeholder="First Name*" asp-for="FirstName">
+                            <span class="text-danger" asp-validation-for="FirstName"></span>
+                        </div>
                     </div>
                     <div class="col-12">
-                      <div class="form-group">
-                        <input type="email" class="form-control-1" placeholder="Last Name*" name="email">
-                      </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-1" placeholder="Last Name*" asp-for="Lastname">
+                            <span class="text-danger" asp-validation-for="Lastname"></span>
+                        </div>
                     </div>
-                  </div>
-                  <div class="row">
+                </div>
+                <div class="row">
                     <div class="col-12">
-                      <div class="form-group">
-                        <input type="email" class="form-control-1" placeholder="Email Address *" name="email">
-                      </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-1" placeholder="Email Address *" asp-for="Email">
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
                     </div>
                     <div class="col-12">
-                      <div class="form-group">
-                        <input type="password" class="form-control-2" placeholder="Password *" name="password">
-                      </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control-2" placeholder="Password *" asp-for="Password">
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group">
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn submit-btn register-btn">Register</button>
-                  </div>
-              </form>
-            
-            
+                </div>
+            </form>
+
+
         </div>
 
         <div>
@@ -55,6 +60,12 @@
         </div>
     </div>
 
- </section>
-        
+</section>
 
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+   
+  
+
+ }
