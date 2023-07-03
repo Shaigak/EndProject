@@ -27,8 +27,8 @@
                 <div class="info-last">
                     <div class="post-date">@item.CreateDate.ToString("dd MMMMM yyyy")</div>
                     <h4><a class="blog-tit" href="blog-detail.html">@item.Title</a></h4>
-                    <p class="blog-dis">@item.Description</p>
-                    <a asp-controller="Blog" asp-action="GetBlogView" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
+@*                    <p class="blog-dis">@item.Description</p>
+*@                    <a asp-controller="Blog" asp-action="GetBlogView" asp-route-id="@item.Id"  class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
                 </div>
             </div>
 

@@ -45,6 +45,9 @@ namespace MyEndProjectCode.Data
         public DbSet<ProductBrand> ProductBrands{ get; set; }
 
         public DbSet<BlogComment> BlogComments { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketProduct> BasketProducts { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

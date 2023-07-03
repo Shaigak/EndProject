@@ -6,8 +6,10 @@ namespace MyEndProjectCode.Models
     {
         public string LastName { get; set; }
         public string FirstName { get; set; }
+        public Basket Basket { get; set; }
         public ICollection<BlogComment> BlogComments { get; set; }
 
+        
 
     }
 }

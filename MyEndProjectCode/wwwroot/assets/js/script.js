@@ -13,9 +13,74 @@ $(function () {
             type: "Get",
 
             success: function (res) {
-                    
+
                 $(product).html(res)
                 console.log(res)
+            }
+        })
+
+    });
+
+    $(document).on("click", ".add-basket", function () {
+        let id = $(this).attr('data-id');
+       
+      
+        $.ajax({
+            method: "POST",
+            url: "/basket/addbasket",
+            data: {
+                id: id
+            },
+            content: "application/x-www-from-urlencoded",
+            success: function (res) {
+               
+
+                debugger
+                swal.fire({
+                    icon: 'success',
+                    title: 'product added',
+                    showconfirmbutton: false,
+                    timer: 1500,
+                })
+            
+
+                $(".shaiq").text(res)
+
+                console.log($("#basketCount").html(100))
+
+               
+            }
+        });
+    });
+
+    $(document).on('click', '#deleteBtn', function () {
+        var id = $(this).attr('data-id')
+        var basketCount = $('.shaiq')
+        var basketCurrentCount = $('.basketCount').html()
+        var id = $(this).attr('data-id');
+        var quantity = $(this).attr('data-quantity')
+        var sum = basketCurrentCount - quantity
+
+
+        $.ajax({
+            method: 'POST',
+            url: "/basket/delete",
+            data: {
+                id: id
+            },
+            success: function (res) {
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Product deleted',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                $(`.basket-product[id=${id}]`).remove();
+                $('.shaiq').html("")
+                $('.shaiq').html(res)
+
             }
         })
 
@@ -30,7 +95,7 @@ $(function () {
 
         let parent = $(".product-grid-view")
 
-        
+
         $.ajax({
 
             url: "shop/GetAllProduct",
@@ -57,7 +122,7 @@ $(function () {
         let paginate = $(".pagination-area")
 
 
-        
+
 
 
         $.ajax({
@@ -70,7 +135,7 @@ $(function () {
                 $(product).html(res)
 
                 $(paginate).addClass("d-none")
-               
+
             }
         })
 

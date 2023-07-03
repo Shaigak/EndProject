@@ -1,6 +1,9 @@
 ﻿@using MyEndProjectCode.ViewModels
 
 @model BlogDetailVM
+
+
+@inject Microsoft.AspNetCore.Identity.UserManager<AppUser> userManager;
 <section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/background-bg-1600x156.jpg);" class="first-sec dealofday intro aos-init aos-animate">
     <div data-aos="fade-right" class="divday">
         <p class="p-intro">HOME<i class="bi bi-chevron-right"></i><span class="span-intro">BLOG</span></p>
@@ -15,19 +18,23 @@
         <div class="row mt-5">
             <div class="col-lg-8 blogsingle yeah12 ">
                 <img src="~/assets//images//blog-detail-img2.jpg" alt="">
-               
-                <h2>Porsche will announce new Electrical Car</h2>
-                
+
+                <h2>@Model.Title</h2>
+
                 <p class="p">
-                    The more thing that could help you to start to live green is to begin walking a bit more. Etiam sed mattis ipsum. Duis lorem augue, hendrerit a ultricies in, consequat sed elit. Aenean libero risus, porta vitae aliquam id, vehicula a metus. Cras nec convallis libero. Nullam sit amet lorem lectus.
+                    @Model.Description
                 </p>
-                <p style="margin-top:-10px" class="p">
-                    Typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </p>
-                <h2 style="margin-top: 50px;">#2. Creative WordPress Themes</h2>
-                <p style="margin-top:-10px" class="p">
-                    Typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </p>
+
+                <div class="blog-banner row">
+                    @foreach (var itemd in Model.BlogImages)
+                    {
+                        <div class="single-img img-hover-effect col-sm-6">
+                            <img style="height:300px;" class="img-full pictures"
+                             src="~/assets/images/@itemd.Image"
+                             alt="Blog Banner" />
+                        </div>
+                    }
+                </div>
 
 
             </div>
@@ -38,58 +45,180 @@
 
 
 
-                <h3 class="RecentBlog">Recent Blog</h3>
+                <h3 class="RecentBlog">@Model.Settings["RecentBlog"]</h3>
 
-                <div class="catagoriyes-blog">
-                    <div style="display: flex;" class="catagoriyes-blog-image">
+                @foreach (var item in Model.GetBlogsRecently)
+                {
+                    <div class="catagoriyes-blog">
 
-                        <div class="catagoriyes-blog-image-img" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/recent-blog-img01-92x78.jpg);"></div>
+                        <div style="display: flex;" class="catagoriyes-blog-image">
 
-                        <div class="catagoriyes-blog-image-item">
-                            <p>Even the all-powerful Pointing has no control about the blind texts</p>
+                            <a href="#">
+                                <img style="height:100px;" class="img-full"
+                                 src="~/assets/images//@item.Images.FirstOrDefault()?.Image"
+                                 alt="Blog Images" />
+                            </a>
+                            <div class="catagoriyes-blog-image-item">
+                                <p>@item.Title</p>
+                            </div>
+
                         </div>
-
-                    </div>
-                    <div class="meta1">
-                        <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
-                    </div>
-                </div>
-                <div class="catagoriyes-blog">
-                    <div style="display: flex;" class="catagoriyes-blog-image">
-
-                        <div class="catagoriyes-blog-image-img" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/recent-blog-img02-92x78.jpg);"></div>
-
-                        <div class="catagoriyes-blog-image-item">
-                            <p>Even the all-powerful Pointing has no control about the blind texts</p>
+                        <div class="meta1">
+                            <div><a href="#"><span class="fa fa-calendar"></span> @item.CreateDate</a></div>
                         </div>
-
                     </div>
-                    <div class="meta1">
-                        <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
-                    </div>
-                </div>
-                <div class="catagoriyes-blog">
-                    <div style="display: flex;" class="catagoriyes-blog-image">
+                }
 
-                        <div class="catagoriyes-blog-image-img" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/recent-blog-img01-92x78.jpg);"></div>
-
-                        <div class="catagoriyes-blog-image-item">
-                            <p>Even the all-powerful Pointing has no control about the blind texts</p>
-                        </div>
-
-                    </div>
-                    <div class="meta1">
-                        <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
-                    </div>
-                </div>
 
                 <h3 class="RecentBlog" style="margin-top: 100px;">Paragraph</h3>
-                <p class="paraqraff">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                <p class="paraqraff">@Model.Settings["Paragrap"]</p>
 
 
             </div>
 
+
+            <div class="blog-comment">
+                <h4 class="heading">Comments (@Model.BlogComments.Count())</h4>
+                @foreach (var item in Model.BlogComments)
+                {
+                    <div class="blog-comment-item">
+
+                        <div class="blog-comment-content">
+                            <div class="user-meta">
+                                <h2 class="user-name">@item.FullName</h2>
+                                <span class="date">@item.CreateDate.ToString("dd MMMM ,yyyy")</span>
+                            </div>
+                            <p class="user-comment">
+                                @item.Message
+                            </p>
+                            <a class="btn btn-custom-size comment-btn" href="#">Reply</a>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="feedback-area">
+                <h2 class="heading">Please give your opinion
+</h2>
+
+
+                @if (User.Identity.IsAuthenticated)
+                {
+
+
+                    AppUser user = userManager.Users.FirstOrDefault(m => m.UserName == User.Identity.Name);
+
+
+
+
+                    <form class="feedback-form" asp-controller="Blog" asp-action="PostComment" asp-route-userId="@user.Id" asp-route-blogId="@ViewBag.BlogId">
+
+
+                        <div class="group-input backComment">
+
+                            <span class="submes"> Name</span>
+                            <div class="form-field me-md-30 mb-30 mb-md-0">
+                                <input  asp-for="CommentVM.FullName" value="@(user.FirstName + " " + user.LastName )" readonly
+                                   class="input-field input1" />
+                            </div>
+
+                            <span class="submes"> Email </span>
+                            
+                            <div class="form-field ">
+                                <input asp-for="CommentVM.Email" value="@(user.Email)" readonly
+                                   class="input-field input1" />
+
+
+                            </div>
+
+                            <span class="submes"> Subject</span>
+                            <div class="form-field mt-30">
+                            <input asp-for="CommentVM.Subject"
+                               placeholder="Subject (Optinal)"
+                               class="input-field input1 " />
+                          </div>
+
+
+
+
+                        
+                          <div class="form-field mt-30">
+                            <textarea asp-for="CommentVM.Message"
+                                  placeholder="Message"
+                                  class="textarea-field messages "></textarea>
+                            </div>
+
+
+                        </div>
+
+                        
+
+                        
+
+
+
+
+                        <div class="button-wrap pt-5 buttonpost">
+                            <button type="submit"
+                                value="submit"
+                                class="btn btn-custom-size xl-size btn-pronia-primary"
+                                name="submit">
+                                <span class="comments">Post Comment </span>
+                            </button>
+                        </div>
+
+
+
+
+
+
+                    </form>
+                }
+                else
+                {
+                    <form class="feedback-form" method="post" asp-controller="Blog" asp-action="PostComment">
+                        <div class="group-input">
+                            <div class="form-field me-md-30 mb-30 mb-md-0">
+                                <input type="text"
+                                   name="name"
+                                   placeholder="Your Name*"
+                                   class="input-field" />
+                            </div>
+                            <div class="form-field">
+                                <input type="text"
+                                   name="email"
+                                   placeholder="Your Email*"
+                                   class="input-field" />
+                            </div>
+                        </div>
+                        <div class="form-field mt-30">
+                            <input type="text"
+                               name="subject"
+                               placeholder="Subject (Optinal)"
+                               class="input-field" />
+                        </div>
+                        <div class="form-field mt-30">
+                            <textarea name="message"
+                                  placeholder="Message"
+                                  class="textarea-field"></textarea>
+                        </div>
+                        <div class="button-wrap pt-5">
+                            <button type="submit"
+                                value="submit"
+                                class="btn btn-custom-size xl-size btn-pronia-primary"
+                                name="submit">
+                                Post Comment
+                            </button>
+                        </div>
+                    </form>
+                }
+            </div>
+
+
+
+
         </div>
     </div>
 </section>
+
+
 

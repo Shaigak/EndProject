@@ -1,3 +1,154 @@
-﻿
-@using MyEndProjectCode.ViewModels
+﻿@model LayoutVM
 
+<header>
+    <div class="main">
+
+
+        <div class="tophead">
+            <div class="wrappertophead">
+                <a class="mail sosials" href=""><i style="margin-right: 5px;" class="bi bi-envelope foot-icon"></i><span class="mt">shaigak@code.edu.az</span></a>
+                <a class="tel sosials" href="#"><i class="bi bi-telephone-fill foot-icon"></i><span class="mt">+994508009988</span></a>
+            </div>
+
+
+            <span class="user">@User.Identity.Name</span>
+
+            <div class="sosial">
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                        <button type="submit">Logout</button>
+                    </form>
+
+
+
+
+
+                }
+                else
+                {
+                    <a class="sosials" asp-controller="Account" asp-action="Login" class="p-2 pl-0"><span class="login">LOG IN</span></a>
+                    <a class="sosials" asp-controller="Account" asp-action="Register" class="p-2 pl-0"><span class="login">SIGN UP</span></a>
+
+                }
+
+                @*    <a class="sosials" asp-controller="Account" asp-action="Login" class="p-2 pl-0"><span class="login">LOG IN</span></a>
+                <a class="sosials"asp-controller="Account" asp-action="Register" class="p-2 pl-0"><span class="login">SIGN UP</span></a>*@
+                <a class="sosials" href="#"><i class="fa-brands fa-square-twitter"></i></a></a>
+                <a class="sosials" href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                <a class="sosials" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="sosials" href="#"><i class="fa-brands fa-instagram"></i></a></a>
+
+
+            </div>
+        </div>
+
+        <div class="menu-wrap">
+            <input type="checkbox" class="toggler">
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./about.html">About</a></li>
+
+                            <li><a href="./shop.html">Shop</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+
+                            <li><a href="login.html">Login</a>/<a href="register.html">Sign up</a></li>
+                            <li class="basket">
+                                <a class="basket-nav" asp-controller="Basket" asp-action="Index">
+                                    <span><i class="fas fa-shopping-basket basket "></i></span>
+                                    <sup id="basketCount" class="">@Model.Count</sup>
+                                    <sup class="basketCount">@Model.Count</sup>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <nav class="nav">
+                <div class="logo"><a asp-controller="Home" asp-action="Index"><img src="~/assets//images/logo (1).png" alt=""></a> </div>
+                <div class="navdiv">
+                    <ul class="navul">
+                        <li class="navli"><a class="nava" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="navli"><a class="nava" asp-controller="About" asp-action="Index">ABOUT</a></li>
+                        <li class="navli"><a class="nava" asp-controller="Shop" asp-action="Index">SHOP</a></li>
+                        <li class="navli"><a class="nava" asp-controller="Blog" asp-action="Index">BLOG</a></li>
+                        <li class="navli"><a class="nava" asp-controller="Contact" asp-action="Index">CONTACT</a></li>
+                        <li>
+                            <a href="#exampleModal"
+                               class="search-btn bt"
+                               data-bs-toggle="modal"
+                               data-bs-target="#exampleModal">
+                                <i class="fa-solid mainsearch fa-magnifying-glass"> </i>
+
+                            </a>
+                        </li>
+
+                        <div class="modal fade"
+                             id="exampleModal"
+                             tabindex="-1"
+                             aria-labelledby="exampleModal"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content modal-bg-dark">
+                                    <div class="modal-header">
+                                        <button type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                                data-tippy="Close"
+                                                data-tippy-inertia="true"
+                                                data-tippy-animation="shift-away"
+                                                data-tippy-delay="50"
+                                                data-tippy-arrow="true"
+                                                data-tippy-theme="sharpborder"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="modal-search">
+                                            <span class="searchbox-info">
+                                                Start typing and press Enter to search or ESC to
+                                                close
+                                            </span>
+                                            <form action="#" class="hm-searchbox">
+                                                <input class="input-search"
+                                                       type="text"
+                                                       name="Search..."
+                                                       value="Search..."
+                                                       onblur="if(this.value==''){this.value='Search...'}"
+                                                       onfocus="if(this.value=='Search...'){this.value=''}"
+                                                       autocomplete="off" />
+                                                <button class="search-btn"
+                                                        type="submit"
+                                                        aria-label="searchbtn">
+                                                    <i class="pe-7s-search "></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <li class="basket">
+                            <a class="basket-nav" asp-controller="Basket" asp-action="Index">
+                                <span><i class="fas fa-shopping-basket basket bask "></i></span>
+                                <span class="shaiq">@Model.Count</span>
+                                @*<sup class="basketCount">@Model.Count</sup>*@
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+</header>

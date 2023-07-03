@@ -27,5 +27,11 @@ namespace MyEndProjectCode.Services
 
                                                                          .FirstOrDefaultAsync(m => m.Id == id);
         }
+
+
+        public async Task<List<Blog>> GetBlogsRecently()
+        {
+            return await _context.Blogs.Where(m => !m.SoftDelete).Include(m => m.Images).OrderByDescending(m => m.CreateDate).Take(3).ToListAsync();
+        }
     }
 }

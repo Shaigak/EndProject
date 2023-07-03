@@ -8,6 +8,15 @@ namespace MyEndProjectCode.ViewModels
         public ICollection<BlogImage> BlogImages { get; set; }
 
         public string Title { get; set; }
+      
         public string Description { get; set; }
+       
+        public List<Blog> GetBlogsRecently { get; set; }
+
+        public CommentVM CommentVM { get; set; }
+
+        public List<BlogComment> BlogComments { get; set; }
+
+        public Dictionary<string, string> Settings { get; set; }
     }
 }

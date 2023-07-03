@@ -69,10 +69,8 @@ namespace MyEndProjectCode.Controllers
             return View();
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public async Task<IActionResult> Login(LoginVM model)
         {
             if (!ModelState.IsValid)
@@ -94,10 +92,10 @@ namespace MyEndProjectCode.Controllers
             }
 
             var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
-            
+
             if (!result.Succeeded)
             {
-                ModelState.AddModelError(string.Empty, "Email or password is wrongs");
+                ModelState.AddModelError(string.Empty, "Email or password is wrong");
                 return View(model);
 
             }

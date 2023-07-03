@@ -1,0 +1,49 @@
+﻿@model BasketListVM
+
+@{
+    ViewData["Title"] = "Index";
+    decimal endTotal = 0;
+}
+
+<div class="container my-5">
+
+    <h2>Products</h2>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Count</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+                <th scope="col">Options</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.BasketProducts)
+            {
+                <tr class="basket-product" id="@item.Id">
+                    <td><img style="width:70px" height="70px" src="~/assets/images/@item.Image" /></td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>
+                        <a><span class="minus" style="cursor:pointer;">-</span></a>
+                        <span class="product-count">@item.Quantity</span>
+                        <a><span class="plus" style="cursor:pointer;">+</span></a>
+                    </td>
+                    <td>@item.Price$</td>
+                    <td>@item.Total$</td>
+                    <td>
+                        <a data-id="@item.Id" data-quantity="@item.Quantity" id="deleteBtn" style="cursor:pointer" class="text-danger">Delete</a>
+                    </td>
+                </tr>
+                endTotal = endTotal + item.Total;
+            }
+        </tbody>
+    </table>
+</div>

@@ -322,6 +322,70 @@ namespace MyEndProjectCode.Migrations
                     b.ToTable("Banners");
                 });
 
+            modelBuilder.Entity("MyEndProjectCode.Models.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId")
+                        .IsUnique()
+                        .HasFilter("[AppUserId] IS NOT NULL");
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("MyEndProjectCode.Models.BasketProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketProducts");
+                });
+
             modelBuilder.Entity("MyEndProjectCode.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -939,9 +1003,37 @@ namespace MyEndProjectCode.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MyEndProjectCode.Models.Basket", b =>
+                {
+                    b.HasOne("MyEndProjectCode.Models.AppUser", "AppUser")
+                        .WithOne("Basket")
+                        .HasForeignKey("MyEndProjectCode.Models.Basket", "AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("MyEndProjectCode.Models.BasketProduct", b =>
+                {
+                    b.HasOne("MyEndProjectCode.Models.Basket", "Basket")
+                        .WithMany("BasketProducts")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MyEndProjectCode.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Basket");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("MyEndProjectCode.Models.BlogComment", b =>
                 {
-                    b.HasOne("MyEndProjectCode.Models.AppUser", null)
+                    b.HasOne("MyEndProjectCode.Models.AppUser", "AppUser")
                         .WithMany("BlogComments")
                         .HasForeignKey("AppUserId");
 
@@ -950,6 +1042,8 @@ namespace MyEndProjectCode.Migrations
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Blog");
                 });
@@ -1035,7 +1129,14 @@ namespace MyEndProjectCode.Migrations
 
             modelBuilder.Entity("MyEndProjectCode.Models.AppUser", b =>
                 {
+                    b.Navigation("Basket");
+
                     b.Navigation("BlogComments");
+                });
+
+            modelBuilder.Entity("MyEndProjectCode.Models.Basket", b =>
+                {
+                    b.Navigation("BasketProducts");
                 });
 
             modelBuilder.Entity("MyEndProjectCode.Models.Blog", b =>
