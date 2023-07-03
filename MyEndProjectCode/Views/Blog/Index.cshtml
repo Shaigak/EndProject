@@ -19,20 +19,10 @@
     </div>
     <div class="p-categoryrow">
 
+         <partial name="_BlogsPartial" model="@Model.PaginateBlog.Datas" />
 
-        @foreach (var item in Model.Blogs)
-        {
-            <div class="p-category-div  lastnew-div">
-                <div><img class="last-new-img" style="width: 400px;" src="~/assets//images/@item.Images.FirstOrDefault().Image" alt=""></div>
-                <div class="info-last">
-                    <div class="post-date">@item.CreateDate.ToString("dd MMMMM yyyy")</div>
-                    <h4><a class="blog-tit" href="blog-detail.html">@item.Title</a></h4>
-@*                    <p class="blog-dis">@item.Description</p>
-*@                    <a asp-controller="Blog" asp-action="GetBlogView" asp-route-id="@item.Id"  class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
-                </div>
-            </div>
 
-        }
+      
 
     </div>
 
@@ -42,18 +32,34 @@
 
 <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
     <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
+        
+
+      
+        <div class="pagination-area">
+
+
+            
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+
+
+                    @for (int i = 1; i <= Model.PaginateBlog.TotalPage; i++)
+                    {
+                        <li class="page-item @*active*@ @(Model.PaginateBlog.CurrentPage == i ? "disabled" : "")">
+                            <a class="page-link" asp-controller="Blog" asp-action="Index" asp-route-page="@i">@i</a>
+                        </li>
+                    }
+
+
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">&raquo;</a>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+        
+
     </ul>
 </nav>

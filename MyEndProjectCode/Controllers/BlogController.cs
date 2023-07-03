@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyEndProjectCode.Data;
+using MyEndProjectCode.Helpers;
 using MyEndProjectCode.Models;
 using MyEndProjectCode.Services.Interfaces;
 using MyEndProjectCode.ViewModels;
@@ -19,16 +20,27 @@ namespace MyEndProjectCode.Controllers
             _context = context;
         }
 
-        public async Task <IActionResult> Index()
+        public async Task <IActionResult> Index(int page = 1, int take = 2)
         {
+
+            List<Blog> blogprod = await _blogService.GetPaginatedDatas(page, take);
+            int pageCount = await GetPageCountAsync(take);
+            Paginate<Blog> paginateDatas = new(blogprod, page, pageCount);
+        
             List<Blog> blogs = await _blogService.GetAll();
             Dictionary<string, string> settings = _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
+
+
+            
+
+            
 
 
             BlogVM model = new BlogVM()
             {
                 Blogs=blogs,
                 Settings = settings,
+                PaginateBlog=paginateDatas
 
             };
 
@@ -108,5 +120,17 @@ namespace MyEndProjectCode.Controllers
 
 
         }
+
+        private async Task<int> GetPageCountAsync(int take)
+        {
+            var productCount = await _blogService.GetCountAsync();
+
+            return (int)Math.Ceiling((decimal)productCount / take);
+        }
+
+
+
+
+
     }
 }

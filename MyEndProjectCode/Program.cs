@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MyEndProjectCode.Data;
+using MyEndProjectCode.Helpers;
 using MyEndProjectCode.Models;
 using MyEndProjectCode.Services;
 using MyEndProjectCode.Services.Interfaces;
@@ -28,7 +29,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Password.RequireLowercase = true;
     opt.Password.RequireUppercase = true;
     opt.Password.RequireNonAlphanumeric = true;
-
+    opt.SignIn.RequireConfirmedEmail = true;
     opt.User.RequireUniqueEmail = true;
     
 
@@ -37,6 +38,8 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Lockout.AllowedForNewUsers = true;
 });
 
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IPopularService, PopularService>();
@@ -46,6 +49,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ITagService, TagService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<EmailSettings>();
 //builder.Services.AddScoped<ILayoutService, LayoutService>();
 
 

@@ -33,5 +33,25 @@ namespace MyEndProjectCode.Services
         {
             return await _context.Blogs.Where(m => !m.SoftDelete).Include(m => m.Images).OrderByDescending(m => m.CreateDate).Take(3).ToListAsync();
         }
+
+
+        public async Task<List<Blog>> GetPaginatedDatas(int page, int take)
+        {
+
+
+            return await _context.Blogs
+                          
+                                .Include(m => m.Images)
+
+                            
+                                .Where(m => !m.SoftDelete)
+                                .Skip((page * take) - take)
+                                .Take(take).ToListAsync();
+
+        }
+
+        public async Task<int> GetCountAsync() => await _context.Blogs.CountAsync();
+
+      
     }
 }

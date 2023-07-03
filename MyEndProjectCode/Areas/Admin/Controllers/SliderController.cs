@@ -61,6 +61,12 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
                 return View();  
             }
 
+            if (slider.Photos == null)
+            {
+                return View(slider);
+            }
+
+
             foreach (var photo in slider.Photos)
             {
                 if (!photo.ContentType.Contains("image/"))  

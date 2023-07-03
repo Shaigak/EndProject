@@ -98,11 +98,21 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
                 List<ProductBrand> productBrands = new();
                 List<ProductCategory> productCategories = new();
 
-                ;
+                if (model.Photos == null)
+                {
+                    return View(model);
+
+                    
+                }
 
 
                 foreach (var photo in model.Photos)
                 {
+
+                    if (photo == null)
+                    {
+                        return View(model);
+                    }
 
                     string fileName = Guid.NewGuid().ToString() + " " + photo.FileName; // herdefe yeni ad duzeldirik . 
                     string root = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images", fileName); // root duzeldirik . 

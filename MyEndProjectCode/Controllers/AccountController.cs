@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyEndProjectCode.Models;
+using MyEndProjectCode.Services.Interfaces;
 using MyEndProjectCode.ViewModels.Account;
 
 namespace MyEndProjectCode.Controllers
@@ -12,12 +13,14 @@ namespace MyEndProjectCode.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IEmailService _emailService;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IEmailService emailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _emailService = emailService;   
         }
 
         [HttpGet]
@@ -58,9 +61,27 @@ namespace MyEndProjectCode.Controllers
 
             }
 
-            await _signInManager.SignInAsync(newUser, false);
-            
-            return RedirectToAction("Index", "Home");
+            //await _signInManager.SignInAsync(newUser, false);
+
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+            string link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = newUser.Id, token }, Request.Scheme, Request.Host.ToString());
+
+            string subject = "Register confirmation";
+
+            string html = string.Empty;
+
+            using (StreamReader reader = new StreamReader("wwwroot/templates/verify.html"))
+            {
+                html = reader.ReadToEnd();
+            }
+
+            html = html.Replace("{{link}}", link);
+            html = html.Replace("{{headerText}}", "Hello");
+
+            _emailService.Send(newUser.Email, subject, html);
+
+
+            return RedirectToAction(nameof(VerifyEmail));
         }
 
         [HttpGet]
@@ -102,6 +123,28 @@ namespace MyEndProjectCode.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null) return BadRequest();
+
+            AppUser user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null) return NotFound();
+
+            await _userManager.ConfirmEmailAsync(user, token);
+
+            await _signInManager.SignInAsync(user, false);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        public IActionResult VerifyEmail()
+        {
+            return View();
+        }
+
 
 
         [HttpPost]
