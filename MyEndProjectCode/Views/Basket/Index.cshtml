@@ -7,43 +7,100 @@
 
 <div class="container my-5">
 
-    <h2>Products</h2>
 
 
+    @if (Model.BasketProducts.Count > 0)
+    {
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Image</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Count</th>
-                <th scope="col">Price</th>
-                <th scope="col">Total</th>
-                <th scope="col">Options</th>
+        <table class="table tablebasket">
+            <h2>Products</h2>
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Count</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Options</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.BasketProducts)
-            {
-                <tr class="basket-product" id="@item.Id">
-                    <td><img style="width:70px" height="70px" src="~/assets/images/@item.Image" /></td>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
-                    <td>
-                        <a><span class="minus" style="cursor:pointer;">-</span></a>
-                        <span class="product-count">@item.Quantity</span>
-                        <a><span class="plus" style="cursor:pointer;">+</span></a>
-                    </td>
-                    <td>@item.Price$</td>
-                    <td>@item.Total$</td>
-                    <td>
-                        <a data-id="@item.Id" data-quantity="@item.Quantity" id="deleteBtn" style="cursor:pointer" class="text-danger">Delete</a>
-                    </td>
                 </tr>
-                endTotal = endTotal + item.Total;
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody class="tbody">
+
+
+
+                @foreach (var item in Model.BasketProducts)
+                {
+                    <tr class="basket-product" id="@item.Id">
+                        <td><img style="width:70px" height="70px" src="~/assets/images/@item.Image" /></td>
+
+                        <td>@item.Name</td>
+
+                        <td>@item.Description</td>
+
+                        <td>
+                         @*   <a><span class="minus" style="cursor:pointer;">-</span></a>
+                            <span class="product-count">@item.Quantity</span>
+                            <a><span class="plus" style="cursor:pointer;">+</span></a>*@
+
+
+                            <div class="number">
+                                <span class="minus">-</span>
+                                <input type="text" value="1" />
+                                <span class="plus">+</span>
+                            </div>
+                        </td>
+
+                        <td>@item.Price$</td>
+
+                        <td>@item.Total$</td>
+
+                        <td>
+                            <a data-id="@item.Id" data-quantity="@item.Quantity" id="deleteBtn" style="cursor:pointer" class="text-danger">Delete</a>
+                        </td>
+                    </tr>
+                    endTotal = endTotal + item.Total;
+                }
+            </tbody>
+        </table>
+    }
+    <div class="container seeclass d-none">
+        <div class="alert alert-success" role="alert">
+            Please add product To cart
+        </div>
+    </div>
+
+    @*  <div style="width: 100%; display:flex; justify-content: end;">
+
+
+    <h2>Total price: <span class="end-total">@endTotal.ToString("0.00") $</span></h2>
+    </div>
+    *@
+
+
+    <div class="row">
+        <div class="col-md-5 ml-auto">
+            <div class="cart-page-total">
+                <h2>Cart totals</h2>
+                <ul>
+                    <li>
+                        Total
+                        <span>$</span>
+                        @foreach (var item in Model.BasketProducts)
+                        {
+                            endTotal += item.Total;
+                        }
+                        <span class="grand-total">@endTotal.ToString("0.00")</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 </div>

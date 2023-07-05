@@ -23,7 +23,8 @@ $(function () {
 
     $(document).on("click", ".add-basket", function () {
         let id = $(this).attr('data-id');
-       
+        
+
       
         $.ajax({
             method: "POST",
@@ -56,10 +57,19 @@ $(function () {
     $(document).on('click', '#deleteBtn', function () {
         var id = $(this).attr('data-id')
         var basketCount = $('.shaiq')
+
+        var basketCountdelete = $('.shaiq').html();
+
+        
         var basketCurrentCount = $('.basketCount').html()
         var id = $(this).attr('data-id');
         var quantity = $(this).attr('data-quantity')
         var sum = basketCurrentCount - quantity
+
+        let tbody = $(".tbody").children();
+
+       
+
 
 
         $.ajax({
@@ -68,6 +78,9 @@ $(function () {
             data: {
                 id: id
             },
+
+
+
             success: function (res) {
 
                 Swal.fire({
@@ -77,10 +90,22 @@ $(function () {
                     timer: 1500
                 })
 
+                if ($(tbody).length == 1) {
+                    $(".tablebasket").addClass("d-none");
+                       $(".seeclass").removeClass("d-none")
+
+                }
+
                 $(`.basket-product[id=${id}]`).remove();
                 $('.shaiq').html("")
                 $('.shaiq').html(res)
+            
+                grandTotal();
 
+                //$('.basketCountdelete') == 0 ? $('tablebasket').addClass("d-none")
+
+              
+                
             }
         })
 
@@ -107,7 +132,33 @@ $(function () {
             }
         })
 
+    }) 
+
+    $(document).on("submit", ".hm-searchbox", function (e) {
+        e.preventDefault();
+        let value = $(".input-search").val();
+        let url = `/shop/MainSearch?searchText=${value}`;
+
+        window.location.assign(url);
+
     })
+
+
+    function grandTotal() {
+        let tbody = $(".tbody").children()
+        let sum = 0;
+        for (var prod of tbody) {
+            let price = parseFloat($(prod).children().eq(4).text())
+            sum += price
+
+             
+        }
+        $(".grand-total").text(sum);
+
+     
+       
+    }
+
 
 
 
@@ -140,6 +191,24 @@ $(function () {
         })
 
     })
+
+
+    $(document).ready(function () {
+        $('.minus').click(function () {
+            var $input = $(this).parent().find('input');
+            var count = parseInt($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            $input.val(count);
+            $input.change();
+            return false;
+        });
+        $('.plus').click(function () {
+            var $input = $(this).parent().find('input');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+    });
 
 
 

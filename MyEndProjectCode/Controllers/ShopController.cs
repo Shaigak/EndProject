@@ -104,6 +104,14 @@ namespace MyEndProjectCode.Controllers
         }
 
 
+        public async Task<IActionResult> MainSearch(string searchText)
+        {
+            var products = await _context.Products.Include(m => m.ProductImages).Include(m => m.ProductCategories).
+           OrderByDescending(m => m.Id).Where(m => !m.SoftDelete && m.Name.ToLower().Trim().Contains(searchText.ToLower().Trim())).Take(6).ToListAsync();
+
+            return View(products);
+        }
+
 
 
     }

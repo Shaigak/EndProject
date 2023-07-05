@@ -83,15 +83,20 @@
                         <li class="navli"><a class="nava" asp-controller="Shop" asp-action="Index">SHOP</a></li>
                         <li class="navli"><a class="nava" asp-controller="Blog" asp-action="Index">BLOG</a></li>
                         <li class="navli"><a class="nava" asp-controller="Contact" asp-action="Index">CONTACT</a></li>
-                        <li>
-                            <a href="#exampleModal"
-                               class="search-btn bt"
-                               data-bs-toggle="modal"
-                               data-bs-target="#exampleModal">
-                                <i class="fa-solid mainsearch fa-magnifying-glass"> </i>
-
-                            </a>
-                        </li>
+                        <form action="#" class="hm-searchbox">
+                            <input class="input-search"
+                                   type="text"
+                                   name="Search..."
+                                   value="  Search..."
+                                   onblur="if(this.value==''){this.value='Search...'}"
+                                   onfocus="if(this.value=='Search...'){this.value=''}"
+                                   autocomplete="off" />
+                            <button class="search-btn"
+                                    type="submit"
+                                    aria-label="searchbtn">
+                                 <i class="fa-solid fa-magnifying-glass"> </i>
+                            </button>
+                        </form>
 
                         <div class="modal fade"
                              id="exampleModal"

@@ -117,6 +117,9 @@ namespace MyEndProjectCode.Controllers
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketProduct.ProductId);
             if (product == null) return NotFound();
 
+
+            
+
             _context.BasketProducts.Remove(basketProduct);
             await _context.SaveChangesAsync();
             return Ok(await _context.BasketProducts.Where(bp => bp.Basket.AppUserId == user.Id).SumAsync(bp => bp.Quantity));
