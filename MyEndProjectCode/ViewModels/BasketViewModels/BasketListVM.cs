@@ -7,6 +7,8 @@
             BasketProducts = new List<BasketProductVM>();
         }
 
+        
+
         public List<BasketProductVM> BasketProducts { get; set; }
     }
 }

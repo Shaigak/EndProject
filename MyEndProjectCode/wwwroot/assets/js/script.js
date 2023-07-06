@@ -151,6 +151,8 @@ $(function () {
             let price = parseFloat($(prod).children().eq(4).text())
             sum += price
 
+            console.log(price)
+
              
         }
         $(".grand-total").text(sum);
@@ -194,10 +196,23 @@ $(function () {
 
 
     $(document).ready(function () {
+
+
+        var min= $(".minus")
         $('.minus').click(function () {
             var $input = $(this).parent().find('input');
             var count = parseInt($input.val()) - 1;
             count = count < 1 ? 1 : count;
+           
+            let tbody = $(".tbody").children()
+            var counta = $(min).next().val()
+
+            let pricec = parseFloat($(tbody).children().eq(4).text())
+            console.log(pricec)
+          
+           
+            
+           
             $input.val(count);
             $input.change();
             return false;
@@ -209,6 +224,25 @@ $(function () {
             return false;
         });
     });
+
+
+
+    $(document).on("click", ".minus", function () {
+        let id = $(this).parent().parent().parent().attr("data-id");
+        let nativePrice = parseFloat($(this).parent().parent().prev().children().eq(1).text());
+        let total = $(this).parent().parent().next().children().eq(1);
+        let count = $(this).prev().prev();
+
+        $.ajax({
+            type: "Post",
+            url: `Cart/IncrementProductCount?id=${id}`,
+            success: function (res) {
+                res++;
+                subTotal(res, nativePrice, total, count)
+                grandTotal();
+            }
+        })
+    })
 
 
 

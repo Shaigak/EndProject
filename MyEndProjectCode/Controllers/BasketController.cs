@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using MyEndProjectCode.Data;
 using MyEndProjectCode.Models;
 using MyEndProjectCode.ViewModels.BasketViewModels;
+using Newtonsoft.Json;
 
 namespace MyEndProjectCode.Controllers
 {
@@ -124,5 +125,35 @@ namespace MyEndProjectCode.Controllers
             await _context.SaveChangesAsync();
             return Ok(await _context.BasketProducts.Where(bp => bp.Basket.AppUserId == user.Id).SumAsync(bp => bp.Quantity));
         }
+
+
+        public IActionResult IncrementProductCount(int? id)
+        {
+            if (id is null) return BadRequest();
+            var baskets = JsonConvert.DeserializeObject<List<BasketProduct>>(Request.Cookies["basket"]);
+            var count = baskets.FirstOrDefault(b => b.ProductId == id).Quantity++;
+
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
+
+            return Ok(count);
+        }
+
+        [HttpPost]
+         public IActionResult DecrementProductCount(int? id)
+        {
+            if (id is null) return BadRequest();
+           
+            var baskets = JsonConvert.DeserializeObject<List<BasketProduct>>(Request.Cookies["basket"]);
+           
+            var count = baskets.FirstOrDefault(b => b.ProductId == id).Quantity--;
+
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
+
+            return Ok(count);
+         }
+
+
+
+
     }
 }

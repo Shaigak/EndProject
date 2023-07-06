@@ -184,7 +184,7 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
 
                     string fileName = Path.Combine(Guid.NewGuid().ToString() + "_" + banner.Photo.FileName);
 
-                    string newPath = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images/website-images", fileName);
+                    string newPath = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images/", fileName);
 
 
                     using (FileStream stream = new FileStream(newPath, FileMode.Create)) // Kompa sekil yuklemek ucun muhit yaradiriq stream yaradiriq 

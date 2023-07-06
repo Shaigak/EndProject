@@ -47,7 +47,7 @@
 
                             <div class="number">
                                 <span class="minus">-</span>
-                                <input type="text" value="1" />
+                                <input type="text" value="@item.Quantity" />
                                 <span class="plus">+</span>
                             </div>
                         </td>
@@ -87,10 +87,10 @@
                     <li>
                         Total
                         <span>$</span>
-                        @foreach (var item in Model.BasketProducts)
+                     @*   @foreach (var item in Model.BasketProducts)
                         {
                             endTotal += item.Total;
-                        }
+                        }*@
                         <span class="grand-total">@endTotal.ToString("0.00")</span>
                     </li>
                 </ul>

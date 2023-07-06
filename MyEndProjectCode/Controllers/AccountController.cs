@@ -157,5 +157,81 @@ namespace MyEndProjectCode.Controllers
 
 
 
+        [HttpGet]
+        public IActionResult ForgotPassWord()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassWord(ForgotPasswordVM forgotPassword)
+        {
+
+            if (!ModelState.IsValid) return View();
+
+
+            AppUser existUser = await _userManager.FindByEmailAsync(forgotPassword.Email);
+
+            if (existUser == null)
+            {
+                ModelState.AddModelError("Email", "User not found");
+                return View();
+            }
+
+
+            string token = await _userManager.GeneratePasswordResetTokenAsync(existUser);
+
+            string link = Url.Action(nameof(ResetPassword), "Account", new { userId = existUser.Id, token },
+
+                Request.Scheme, Request.Host.ToString());
+
+
+
+            string html = string.Empty;
+
+            using (StreamReader reader = new StreamReader("wwwroot/templates/verify.html"))
+            {
+                html = reader.ReadToEnd();
+            }
+            string subject = "Verify Password Reset Email";
+
+            html = html.Replace("{{link}}", link);
+            html = html.Replace("{{headerText}}", existUser.FirstName);
+
+            _emailService.Send(existUser.Email, subject, html);
+
+
+            return RedirectToAction(nameof(VerifyEmail));
+
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string UserId, string token)
+        {
+
+            return View(new ResetPasswordVM { Token = token, UserId = UserId });
+        }
+
+
+
+        public async Task<IActionResult> ConfirmResetPassword(ResetPasswordVM resetPassword)
+        {
+
+            if (!ModelState.IsValid) return View(resetPassword);
+
+            AppUser existUser = await _userManager.FindByIdAsync(resetPassword.UserId);
+
+            if (existUser == null) return NotFound();
+
+            await _userManager.ResetPasswordAsync(existUser, resetPassword.Token, resetPassword.Password);
+
+
+            return RedirectToAction(nameof(Login));
+        }
+
+
+
     }
 }
