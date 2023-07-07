@@ -1,0 +1,45 @@
+.login-sec{
+    .login-div{
+        .register-left{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 500px;
+
+            .register-h2{
+                margin-bottom: 50px;
+            }
+        }
+
+      
+    }
+}
+
+
+@media screen and (max-width: 1330px) {
+    .login-sec{
+        .login-div{
+            .register-left{
+                width: 400px;
+                padding-top: 70%;
+            }
+         
+        }
+    }
+  
+  }
+
+  @media screen and (max-width: 780px) {
+    .login-sec{
+        .login-div{
+            flex-wrap: wrap-reverse;
+            .register-left{
+                width: 100%;
+                padding-top: 0;
+            }
+         
+        }
+    }
+  
+  }
