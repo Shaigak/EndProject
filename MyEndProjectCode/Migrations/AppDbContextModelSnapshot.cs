@@ -952,6 +952,68 @@ namespace MyEndProjectCode.Migrations
                     b.ToTable("Teams");
                 });
 
+            modelBuilder.Entity("MyEndProjectCode.Models.Wish", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Wishs");
+                });
+
+            modelBuilder.Entity("MyEndProjectCode.Models.WishProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("WishId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("WishId");
+
+                    b.ToTable("WishProducts");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1127,6 +1189,34 @@ namespace MyEndProjectCode.Migrations
                     b.Navigation("Tag");
                 });
 
+            modelBuilder.Entity("MyEndProjectCode.Models.Wish", b =>
+                {
+                    b.HasOne("MyEndProjectCode.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("MyEndProjectCode.Models.WishProduct", b =>
+                {
+                    b.HasOne("MyEndProjectCode.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MyEndProjectCode.Models.Wish", "Wish")
+                        .WithMany("WishProducts")
+                        .HasForeignKey("WishId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Wish");
+                });
+
             modelBuilder.Entity("MyEndProjectCode.Models.AppUser", b =>
                 {
                     b.Navigation("Basket");
@@ -1170,6 +1260,11 @@ namespace MyEndProjectCode.Migrations
             modelBuilder.Entity("MyEndProjectCode.Models.Tag", b =>
                 {
                     b.Navigation("ProductTags");
+                });
+
+            modelBuilder.Entity("MyEndProjectCode.Models.Wish", b =>
+                {
+                    b.Navigation("WishProducts");
                 });
 #pragma warning restore 612, 618
         }

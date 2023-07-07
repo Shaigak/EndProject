@@ -103,6 +103,10 @@ namespace MyEndProjectCode.Controllers
             return Ok(await _context.BasketProducts.Where(bp => bp.Basket.AppUserId == user.Id).SumAsync(bp => bp.Quantity));
         }
 
+
+
+
+
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {

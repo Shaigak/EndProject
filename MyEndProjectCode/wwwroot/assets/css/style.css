@@ -446,6 +446,8 @@
 .logout {
     color: black;
      font-family: 'Times New Roman', Times, serif;
+     text-decoration:none;
+
 }
 
 .logbuta{
@@ -454,6 +456,7 @@
     width:100px;
     top:20px;
     font-size:18px;
+    text-decoration:none;
 }
 
 .user {
@@ -463,6 +466,10 @@
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-size:20px;
+}
+
+.logg{
+    color:white;
 }
 
 .shaiq {
@@ -476,7 +483,9 @@
     list-style: none;
     border: none;
     position: relative;
-    right: 20px;
+    /*right: 12px;*/
+    height: 30px;
+    background-color: #f2f2f2
 }
 }
 
@@ -529,5 +538,44 @@ input {
 }
 
 .input-search {
-    width: 200px
+    width: 200px;
+    position:relative;
+    
+    
+}
+
+.wishlish{
+    position:relative;
+    right:70px;
+    top:2px;
+    font-size:20px;
+}
+
+
+.forget {
+    color: white;
+    text-decoration: none;
+    border-style: none;
+    
+}
+
+.aclas{
+    text-decoration:none;
+}
+
+
+.tip{
+    width:150px;
+}
+
+.send{
+    color:gold;
+    font-size:20px;
+    position:relative;
+    bottom:30px;
+}
+.tips{
+    position:relative;
+    right:200px;
+    width:190px;
 }

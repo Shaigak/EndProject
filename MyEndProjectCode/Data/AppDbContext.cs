@@ -46,6 +46,10 @@ namespace MyEndProjectCode.Data
 
         public DbSet<BlogComment> BlogComments { get; set; }
         public DbSet<Basket> Baskets { get; set; }
+
+        public DbSet<Wish> Wishs { get; set; }
+
+        public DbSet<WishProduct> WishProducts { get; set; }
         public DbSet<BasketProduct> BasketProducts { get; set; }
 
 

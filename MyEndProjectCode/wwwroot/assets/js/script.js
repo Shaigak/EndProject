@@ -54,6 +54,41 @@ $(function () {
         });
     });
 
+
+
+    $(document).on("click", ".add-baskets", function () {
+        let id = $(this).attr('data-id');
+
+
+
+        $.ajax({
+            method: "POST",
+            url: "/wish/addbasket",
+            data: {
+                id: id
+            },
+            content: "application/x-www-from-urlencoded",
+            success: function (res) {
+
+
+                debugger
+                swal.fire({
+                    icon: 'success',
+                    title: 'Product added to your wishlist ',
+                    showconfirmbutton: false,
+                    timer: 1500,
+                })
+
+
+                //$(".shaiq").text(res)
+
+                //console.log($("#basketCount").html(100))
+
+
+            }
+        });
+    });
+
     $(document).on('click', '#deleteBtn', function () {
         var id = $(this).attr('data-id')
         var basketCount = $('.shaiq')
@@ -106,6 +141,65 @@ $(function () {
 
               
                 
+            }
+        })
+
+    })
+
+
+
+    $(document).on('click', '#deleteBtns', function () {
+        var id = $(this).attr('data-id')
+        var basketCount = $('.shaiq')
+
+        var basketCountdelete = $('.shaiq').html();
+
+
+        var basketCurrentCount = $('.basketCount').html()
+        var id = $(this).attr('data-id');
+        var quantity = $(this).attr('data-quantity')
+        var sum = basketCurrentCount - quantity
+
+        let tbody = $(".tbody").children();
+
+
+
+
+
+        $.ajax({
+            method: 'POST',
+            url: "/wish/delete",
+            data: {
+                id: id
+            },
+
+
+
+            success: function (res) {
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Product deleted',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                if ($(tbody).length == 1) {
+                    $(".tablebasket").addClass("d-none");
+                    $(".seeclass").removeClass("d-none")
+
+                }
+
+                //$(`.basket-product[id=${id}]`).remove();
+                //$('.shaiq').html("")
+                //$('.shaiq').html(res)
+
+               /* grandTotal();*/
+
+                //$('.basketCountdelete') == 0 ? $('tablebasket').addClass("d-none")
+
+
+
             }
         })
 
@@ -176,8 +270,6 @@ $(function () {
 
 
 
-
-
         $.ajax({
 
             url: `shop/GetProductsByBrandName?id=${brandId}`,
@@ -186,6 +278,8 @@ $(function () {
             success: function (res) {
 
                 $(product).html(res)
+
+
 
                 $(paginate).addClass("d-none")
 

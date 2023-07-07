@@ -18,6 +18,8 @@
                 {
 
                     <form asp-controller="Account" asp-action="Logout" method="post">
+
+                        
                         <button class="logbuta" type="submit"><span class="logout">Logout</span></button>
                     </form>
 
@@ -145,10 +147,21 @@
                         <li class="basket">
                             <a class="basket-nav" asp-controller="Basket" asp-action="Index">
                                 <span><i class="fas fa-shopping-basket basket bask "></i></span>
+
+                                 <span><i class="fas fa-shopping-basket basket bask "></i></span>
+                                 <a class="add-basket" <i class="fa-solid fa-heart"></i></a>
                                 <span class="shaiq">@Model.Count</span>
                                 @*<sup class="basketCount">@Model.Count</sup>*@
                             </a>
                         </li>
+
+                         <a class="basket-nav" asp-controller="Wish" asp-action="Index">
+                               
+                             <i class="fa-solid fa-heart wishlish"></i>
+                            
+                          </a>
+
+                        
                     </ul>
                 </div>
             </nav>

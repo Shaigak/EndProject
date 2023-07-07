@@ -1,0 +1,80 @@
+﻿@using MyEndProjectCode.ViewModels.WishViewModels
+@model WishListVM
+
+@{
+    ViewData["Title"] = "Index";
+    decimal endTotal = 0;
+}
+
+<div class="container my-5">
+
+
+
+    @if (Model.WishProducts.Count > 0)
+    {
+
+        <table class="table tablebasket">
+            <h2>Products</h2>
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Count</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Options</th>
+
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+
+
+                @foreach (var item in Model.WishProducts)
+                {
+                    <tr class="basket-product" id="@item.Id">
+                        <td><img style="width:70px" height="70px" src="~/assets/images/@item.Image" /></td>
+
+                        <td>@item.Name</td>
+
+                        <td>@item.Description</td>
+
+                        <td>
+                        
+
+
+                            <div class="number">
+                                <span class="minus">-</span>
+                                <input type="text" value="@item.Quantity" />
+                                <span class="plus">+</span>
+                            </div>
+                        </td>
+
+                        <td>@item.Price$</td>
+
+                        <td>@item.Total$</td>
+
+                        <td>
+                            <a data-id="@item.Id" data-quantity="@item.Quantity" id="deleteBtns" style="cursor:pointer" class="text-danger">Delete</a>
+                        </td>
+                    </tr>
+                    endTotal = endTotal + item.Total;
+                }
+            </tbody>
+        </table>
+    }
+    
+    <div class="container seeclass d-none">
+        <div class="alert alert-success" role="alert">
+            Please add product To cart
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+

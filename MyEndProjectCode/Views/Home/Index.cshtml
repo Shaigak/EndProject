@@ -48,30 +48,32 @@
 
         <div class="best-seller-card" style="display: flex;">
 
-           @foreach (var item in Model.Products)
-           {
-               <div class="col-3">
+            @foreach (var item in Model.Products)
+            {
+                <div class="col-3">
 
-                <div class="product-card">
-                    <div class="badge">Hot</div>
-                    <div class="product-tumb">
-                        <img src="~/assets/images/@item.ProductImages.FirstOrDefault().Image" alt="">
-                    </div>
-                    <div class="product-details">
-                        <span class="product-catagory">@item.Name</span>
-                        <h4><a href="">@item.Description</a></h4>
-                        <div class="product-bottom-details">
-                            <div class="product-price">$@item.Price</div>
-                            <div class="product-links">
-                                <a class="add-basket" data-id="@item.Id"><i class="fa fa-shopping-cart"></i></a>
+                    <div class="product-card">
+                        <div class="badge">Hot</div>
+                        <div class="product-tumb">
+                            <img src="~/assets/images/@item.ProductImages.FirstOrDefault().Image" alt="">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-catagory">@item.Name</span>
+                            <h4><a href="">@item.Description</a></h4>
+                            <div class="product-bottom-details">
+                                <div class="product-price">$@item.Price</div>
+                                <div class="product-links">
+                                    <a class="add-basket" data-id="@item.Id"><i class="fa fa-shopping-cart"></i></a>
+
+                                    <a class="add-baskets" data-id="@item.Id"><i class="fa-solid fa-heart"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-            </div>
-               
-           }
+            }
 
         </div>
 </section>
