@@ -97,7 +97,7 @@
                 }
             </div>
             <div class="feedback-area">
-                <h2 class="heading">Please give your opinion
+                <h2 class="heading">Please write your opinion
 </h2>
 
 
@@ -117,15 +117,15 @@
 
                             <span class="submes"> Name</span>
                             <div class="form-field me-md-30 mb-30 mb-md-0">
-                                <input  asp-for="CommentVM.FullName" value="@(user.FirstName + " " + user.LastName )" readonly
-                                   class="input-field input1" />
+                                <input   asp-for="CommentVM.FullName" value="@(user.FirstName + " " + user.LastName )" readonly
+                                   class="input-field input1 inp2" />
                             </div>
 
                             <span class="submes"> Email </span>
                             
                             <div class="form-field ">
                                 <input asp-for="CommentVM.Email" value="@(user.Email)" readonly
-                                   class="input-field input1" />
+                                   class="input-field input1  inp2" />
 
 
                             </div>
@@ -134,7 +134,7 @@
                             <div class="form-field mt-30">
                             <input asp-for="CommentVM.Subject"
                                placeholder="Subject (Optinal)"
-                               class="input-field input1 " />
+                               class="input-field input1 inp2  " />
                           </div>
 
 
@@ -160,9 +160,9 @@
                         <div class="button-wrap pt-5 buttonpost">
                             <button type="submit"
                                 value="submit"
-                                class="btn btn-custom-size xl-size btn-pronia-primary"
+                                class="btn btn-custom-size xl-size btn-pronia-primary postb"
                                 name="submit">
-                                <span class="comments">Post Comment </span>
+                                <h1 class="postcom">Post Comment</h1>
                             </button>
                         </div>
 

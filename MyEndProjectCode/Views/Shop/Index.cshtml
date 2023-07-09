@@ -26,27 +26,71 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="left-sidebar">
-                        <div class="search">
-                            <h4>Search</h4>
-                            <div class="search-product">
-                                <input type="search" name="" id="" placeholder="Search products"
-                                       class="search-product-input">
-                                <img src="./search-product-icon.png" alt="" class="search-product-icon">
-                            </div>
+
+                        <div class="product-price">
+                            <form id="filterForm" method="get" asp-controller="Shop" asp-action="Index">
+                                <div class="price-title">
+                                    <h3>Filter By Price</h3>
+                                </div>
+                                <div class="price-filter">
+                                    <div class="card">
+                                        <div class="price-content">
+                                            <div>
+                                                <label>Min</label>
+                                                <p id="min-value">50</p>
+                                            </div>
+
+                                            <div>
+                                                <label>Max</label>
+                                                <p id="max-value">500</p>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="filter-button">
+                                            <div class="range-slider">
+                                                <input type="range" class="min-price" value="100" min="10" max="500"
+                                                       step="10">
+                                                <input type="range" class="max-price" value="250" min="10" max="500"
+                                                       step="10">
+                                            </div>
+                                            <button type="submit">FILTER</button>
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </form>
                         </div>
+
+                        @* <div class="search">
+                        <h4>Search</h4>
+                        <div class="search-product">
+                        <input type="search" name="" id="" placeholder="Search products"
+                        class="search-product-input">
+                        <img src="./search-product-icon.png" alt="" class="search-product-icon">
+                        </div>
+                        </div>*@
                         <div class="categories">
                             <h4>Product categories</h4>
 
-                             
-                            <a href="#"  class="allprod ">
 
-                            <span class="words all">All</span> <span class="coun">(@Model.AllProducts.Count)</span>
+                            <a href="#" class="allprod ">
+
+                                <span class="words all">All</span> <span class="coun">(@Model.AllProducts.Count)</span>
                             </a>
-                           
 
 
 
-                            
+
+
 
                             @foreach (var item in Model.Categories)
                             {
@@ -54,7 +98,7 @@
 
 
                                     <a href="" data-id="@item.Id" class="cate">
-                                       <span class="words">@item.Name</span>   <span class="coun">(@item.ProductCategories.Count())</span>
+                                        <span class="words">@item.Name</span>   <span class="coun">(@item.ProductCategories.Count())</span>
                                     </a>
 
 
@@ -67,7 +111,7 @@
                             {
                                 <ul>
                                     <a href="" data-id="@item.Id" class="brandcl">
-                                      <span class="words">@item.Name</span>  <span class="coun">(@item.ProductBrands.Count())</span> 
+                                        <span class="words">@item.Name</span>  <span class="coun">(@item.ProductBrands.Count())</span>
                                     </a>
                                 </ul>
 
@@ -85,13 +129,13 @@
                             {
 
 
-                                
-                                    <li>
-                                        <a href="#" data-id="@item.Id" class="tagn">
-                                       <span class="words">TagCode :</span>  <span class="coun">@item.Year</span>  
+
+                                <li>
+                                    <a href="#" data-id="@item.Id" class="tagn">
+                                        <span class="words">TagCode :</span>  <span class="coun">@item.Year</span>
                                     </a>
-                                    </li>
-                               
+                                </li>
+
 
 
 
@@ -164,6 +208,37 @@
                     </div>
                 </div>
 
+
+                <div class="product-price">
+                    <div class="price-title">
+                        <h3>Filter By Price</h3>
+                    </div>
+                    <div class="price-filter">
+                        <div class="card">
+                            <div class="price-content">
+                                <div>
+                                    <label>Min</label>
+                                    <p id="min-value">50</p>
+                                </div>
+
+                                <div>
+                                    <label>Max</label>
+                                    <p id="max-value">500</p>
+                                </div>
+                            </div>
+
+                            <div class="range-slider">
+                                <input type="range" class="min-price" value="100" min="10" max="500"
+                                       step="10">
+                                <input type="range" class="max-price" value="250" min="10" max="500"
+                                       step="10">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
 
 
 

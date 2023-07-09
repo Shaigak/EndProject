@@ -25,11 +25,11 @@ namespace MyEndProjectCode.Controllers
             _tagService = tagService;
         }
 
-        public async Task <IActionResult> Index(int page = 1, int take =6)
+        public async Task <IActionResult> Index(int page = 1, int take =6, int? value1 = null, int? value2 = null)
 
         {
 
-            List<Product> paginateProd = await _productService.GetPaginatedDatas(page, take);
+            List<Product> paginateProd = await _productService.GetPaginatedDatas(page, take,value1,value2);
             
             int pageCount = await GetPageCountAsync(take);
 
@@ -61,9 +61,18 @@ namespace MyEndProjectCode.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetRangeProducts(int value1, int value2)
+        {
+            List<Product> products = new();
+            if (value1 != 0 && value2 != 0)
+            {
+                products = await _context.Products.Where(x => x.Price >= value1 && x.Price <= value2).Include(m => m.ProductImages).ToListAsync();
 
+            }
+            return PartialView("_ProductsPartial", products);
+        }
 
-      
 
         private async Task<int> GetPageCountAsync(int take)
         {

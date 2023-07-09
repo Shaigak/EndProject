@@ -98,26 +98,28 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
                 List<ProductBrand> productBrands = new();
                 List<ProductCategory> productCategories = new();
 
-                if (model.Photos == null)
-                {
-                    return View(model);
+                //if (model.Photos == null)
+                //{
+                //    return View(model);
 
                     
-                }
+                //}
 
 
                 foreach (var photo in model.Photos)
                 {
 
-                    if (photo == null)
-                    {
-                        return View(model);
-                    }
+                    //if (photo == null)
+                    //{
+                    //    return View(model);
+                    //}
 
                     string fileName = Guid.NewGuid().ToString() + " " + photo.FileName; // herdefe yeni ad duzeldirik . 
                     string root = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images", fileName); // root duzeldirik . 
 
                     await FileHelper.SaveFileAsync(root, photo);
+
+                    
 
 
                     ProductImage productImage = new()
@@ -127,6 +129,7 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
 
                     productImages.Add(productImage);
                 }
+               
                 newProduct.ProductImages = productImages;
 
 
@@ -145,7 +148,11 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
                 }
                 else
                 {
+
                     ModelState.AddModelError("CategoryIds", "Dont be empty");
+                   
+                    
+                    
                 }
 
                 if (model.TagIds.Count > 0)
@@ -237,7 +244,7 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
                 StockCount = dbProduct.StockCount,
                 TagIds = dbProduct.ProductTags.Select(m => m.Tag.Id).ToList(),
                 CategoryIds = dbProduct.ProductCategories.Select(m => m.Category.Id).ToList(),
-              
+                BrandIds = dbProduct.ProductBrands?.Select(m => m.BrandPro.Id).ToList()
 
             };
 
@@ -271,10 +278,6 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
             List<ProductCategory> productCategories = new();
             List<ProductTag> productTags = new();
             List<ProductBrand> productBrands = new();
-
-   
-
-
 
            
             if (model.Photos is not null)
@@ -351,7 +354,7 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
             else
             {
                 ModelState.AddModelError("TagIds", "Don't be empty");
-                return View();
+                return View(model);
             }
 
 
@@ -371,7 +374,7 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
             }
             else
             {
-                ModelState.AddModelError("TagIds", "Don't be empty");
+                ModelState.AddModelError("BrandIds", "Don't be empty");
                 return View();
             }
 
