@@ -444,9 +444,10 @@
 }*/
 
 .logout {
-    color: black;
+    color: white;
      font-family: 'Times New Roman', Times, serif;
      text-decoration:none;
+     font-size:20px;
 
 }
 
@@ -457,6 +458,8 @@
     top:20px;
     font-size:18px;
     text-decoration:none;
+    background:black;
+    border:none;
 }
 
 .user {
@@ -486,7 +489,6 @@
     /*right: 12px;*/
     height: 30px;
     background-color: #f2f2f2
-}
 }
 
 
@@ -676,3 +678,42 @@ input {
             border-radius: 3px;
             border: none;
         }
+
+
+        .filt{
+            margin-top:15px;
+            font-size:14px;
+        }
+
+        .quan{
+            margin-left:50px;
+        }
+
+.zoom {
+
+    transition: transform .2s;
+
+}
+
+    .zoom:hover {
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5);
+    }
+
+
+    .explore{
+        margin-top:260px;
+    }
+
+.shrink img {
+    transition: 1s ease;
+}
+
+    .shrink img:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        transition: 1s ease;
+    }
+ 

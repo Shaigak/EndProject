@@ -58,35 +58,7 @@ $(function () {
 
 
 
-    //-------price filtre --star------------
-
-    let minValue = document.getElementById("min-value");
-    // console.log(minValue);
-    let maxValue = document.getElementById("max-value");
-
-    function validateRange(minPrice, maxPrice) {
-        if (minPrice > maxPrice) {
-            // Swap to Values
-            let tempValue = maxPrice;
-            maxPrice = minPrice;
-            minPrice = tempValue;
-        }
-
-        minValue.innerHTML = "$" + minPrice;
-        maxValue.innerHTML = "$" + maxPrice;
-    }
-
-    const inputElements = document.querySelectorAll(".range-slider input");
-    inputElements.forEach((element) => {
-        element.addEventListener("change", (e) => {
-            let minPrice = parseInt(inputElements[0].value);
-            let maxPrice = parseInt(inputElements[1].value);
-
-            validateRange(minPrice, maxPrice);
-        });
-    });
-
-    validateRange(inputElements[0].value, inputElements[1].value);
+    
 
 
 
@@ -184,35 +156,32 @@ $(function () {
 
 
 
-    $(document).on('click', '#deleteBtns', function () {
-        var id = $(this).attr('data-id')
-        var basketCount = $('.shaiq')
+    $(document).on("click", ".delete-wishlist", function () {
+        //var basketCount = $('.shaiq')
+        let id = $(this).parent().parent().attr("data-id");
 
-        var basketCountdelete = $('.shaiq').html();
+        console.log(id)
 
-
+        let tr = $(this).parent().parent();
+        console.log(tr)
+        let data = { id: id };
         var basketCurrentCount = $('.basketCount').html()
-        var id = $(this).attr('data-id');
+       /* var id = $(this).attr('data-id');*/
         var quantity = $(this).attr('data-quantity')
         var sum = basketCurrentCount - quantity
 
         let tbody = $(".tbody").children();
 
-
+        let tablebasket = $(".tablebasket")
 
 
 
         $.ajax({
             method: 'POST',
             url: "/wish/delete",
-            data: {
-                id: id
-            },
-
-
-
+            data: data,
             success: function (res) {
-
+                $(tr).remove()
                 Swal.fire({
                     icon: 'success',
                     title: 'Product deleted',
@@ -221,18 +190,10 @@ $(function () {
                 })
 
                 if ($(tbody).length == 1) {
-                    $(".tablebasket").addClass("d-none");
+                    $(tablebasket).addClass("d-none");
                     $(".seeclass").removeClass("d-none")
 
                 }
-
-                //$(`.basket-product[id=${id}]`).remove();
-                //$('.shaiq').html("")
-                //$('.shaiq').html(res)
-
-                /*grandTotal();*/
-
-                //$('.basketCountdelete') == 0 ? $('tablebasket').addClass("d-none")
 
 
 
@@ -325,6 +286,12 @@ $(function () {
     })
 
 
+
+ 
+ 
+
+
+
     $(document).ready(function () {
 
 
@@ -411,6 +378,10 @@ $(function () {
         e.preventDefault();
         let value1 = $(".min-price").val()
         let value2 = $(".max-price").val()
+
+        let paginate = $(".pagination-area")
+
+      
         console.log(value1)
         console.log(value2)
 
@@ -422,10 +393,49 @@ $(function () {
             data: data,
             success: function (res) {
                 $(parent).html(res);
+                if (value1 == "10" && value2 == "500") {
+                     $(paginate).addClass("d-none")
+
+
+                }
+
+
+
             }
 
         })
     })
+
+
+    //-------price filtre --star------------
+
+    let minValue = document.getElementById("min-value");
+    // console.log(minValue);
+    let maxValue = document.getElementById("max-value");
+
+    function validateRange(minPrice, maxPrice) {
+        if (minPrice > maxPrice) {
+            // Swap to Values
+            let tempValue = maxPrice;
+            maxPrice = minPrice;
+            minPrice = tempValue;
+        }
+
+        minValue.innerHTML = "$" + minPrice;
+        maxValue.innerHTML = "$" + maxPrice;
+    }
+
+    const inputElements = document.querySelectorAll(".range-slider input");
+    inputElements.forEach((element) => {
+        element.addEventListener("change", (e) => {
+            let minPrice = parseInt(inputElements[0].value);
+            let maxPrice = parseInt(inputElements[1].value);
+
+            validateRange(minPrice, maxPrice);
+        });
+    });
+
+    validateRange(inputElements[0].value, inputElements[1].value);
 
 
 

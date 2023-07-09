@@ -55,7 +55,7 @@
                     <div class="product-card">
                         <div class="badge">Hot</div>
                         <div class="product-tumb">
-                            <img src="~/assets/images/@item.ProductImages.FirstOrDefault().Image" alt="">
+                            <img class="zoom" src="~/assets/images/@item.ProductImages.FirstOrDefault().Image" alt="">
                         </div>
                         <div class="product-details">
                             <span class="product-catagory">@item.Name</span>
@@ -142,10 +142,10 @@
 
         @foreach (var item in Model.Blogs)
         {
-            <div class="p-category-div  lastnew-div">
-                <div><img class="last-new-img" style="width: 400px;" src="~/assets//images/@item.Images.FirstOrDefault().Image" alt=""></div>
+            <div class="p-category-div  lastnew-div shrink">
+                <div><img class="last-new-img " style="width: 400px;" src="~/assets//images/@item.Images.FirstOrDefault().Image" alt=""></div>
                 <div class="info-last">
-                    <div class="post-date">@item.CreateDate</div>
+                    <div class="post-date">@item.CreateDate.ToString("dd MMMMM yyyy")</div>
                     <h4><a class="blog-tit" href="blog-detail.html">@item.Title</a></h4>
                     <p class="blog-dis">@item.Title</p>
                     <a h asp-controller="Blog" asp-action="GetBlogView" asp-route-id="@item.Id"  class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>

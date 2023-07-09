@@ -70,6 +70,7 @@ namespace MyEndProjectCode.Controllers
                 products = await _context.Products.Where(x => x.Price >= value1 && x.Price <= value2).Include(m => m.ProductImages).ToListAsync();
 
             }
+            
             return PartialView("_ProductsPartial", products);
         }
 

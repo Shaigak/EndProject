@@ -27,13 +27,13 @@
 
                 </tr>
             </thead>
-            <tbody class="tbody">
+            <tbody class="tbody ">
 
 
 
                 @foreach (var item in Model.WishProducts)
                 {
-                    <tr class="basket-product" id="@item.Id">
+                    <tr class="basket-product" data-id="@item.Id">
                         <td><img style="width:70px" height="70px" src="~/assets/images/@item.Image" /></td>
 
                         <td>@item.Name</td>
@@ -45,9 +45,7 @@
 
 
                             <div class="number">
-                                <span class="minus">-</span>
-                                <input type="text" value="@item.Quantity" />
-                                <span class="plus">+</span>
+                                <span class="quan">@item.Quantity</span>
                             </div>
                         </td>
 
@@ -56,7 +54,7 @@
                         <td>@item.Total$</td>
 
                         <td>
-                            <a data-id="@item.Id" data-quantity="@item.Quantity" id="deleteBtns" style="cursor:pointer" class="text-danger">Delete</a>
+                            <a data-id="@item.Id" data-quantity="@item.Quantity" class="delete-wishlist" style="cursor:pointer" class="text-danger">Delete</a>
                         </td>
                     </tr>
                     endTotal = endTotal + item.Total;
