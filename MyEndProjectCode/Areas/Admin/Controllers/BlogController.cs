@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyEndProjectCode.Areas.View_Models;
 using MyEndProjectCode.Data;
@@ -7,6 +8,7 @@ using MyEndProjectCode.Services.Interfaces;
 
 namespace MyEndProjectCode.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class BlogController : Controller
     {

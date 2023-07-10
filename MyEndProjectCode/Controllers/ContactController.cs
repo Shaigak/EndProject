@@ -22,6 +22,13 @@ namespace MyEndProjectCode.Controllers
         }
 
 
+        public IActionResult ConfirmMessage()
+        {
+            return View();
+        }
+
+
+
 
         public async Task<IActionResult> PostComment(ContactUserVM  user)
         {
@@ -36,7 +43,7 @@ namespace MyEndProjectCode.Controllers
 
             await _context.AddAsync(newContact);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ConfirmMessage));
 
 
 

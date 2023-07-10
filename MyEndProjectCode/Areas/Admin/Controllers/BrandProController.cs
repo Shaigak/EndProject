@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyEndProjectCode.Areas.View_Models;
 using MyEndProjectCode.Data;
@@ -8,6 +9,7 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class BrandProController : Controller
     {
 

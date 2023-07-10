@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N9eiMSVekT+06WmFyJuuig+EMeOmh1GHI6EnJW735/w=",
+  "Hash": "CMbdYJdehkLJoyRuaiqV+4hN7dXDdpVxbcSZ9vkbwtQ=",
   "Source": "MyEndProjectCode",
   "BasePath": "_content/MyEndProjectCode",
   "Mode": "Default",
@@ -2344,6 +2344,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\63edce2f-4f1a-4955-ad6a-139545311264 5fd68f29-2496-4ea1-80f2-fd7a192722ab 1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\a2308858-4591-4d55-90c1-33c532df9c40_2.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/a2308858-4591-4d55-90c1-33c532df9c40_2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\a2308858-4591-4d55-90c1-33c532df9c40_2.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\about-img1-602x429 (1).png",

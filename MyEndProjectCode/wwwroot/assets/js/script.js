@@ -374,6 +374,26 @@ $(function () {
     })
 
 
+
+    //$(document).on("click", ".sendmes", function (e) {
+   
+
+
+    //    $.ajax({
+
+    //        url: `shop/GetProductsTagName?id=${tagId}`,
+    //        type: "Get",
+
+    //        success: function (res) {
+
+
+    //        }
+    //    })
+
+    //})
+
+
+
     $(document).on("submit", "#filterForm", function (e) {
         e.preventDefault();
         let value1 = $(".min-price").val()
@@ -399,15 +419,11 @@ $(function () {
 
                 }
 
-
-
             }
 
         })
     })
 
-
-    //-------price filtre --star------------
 
     let minValue = document.getElementById("min-value");
     // console.log(minValue);

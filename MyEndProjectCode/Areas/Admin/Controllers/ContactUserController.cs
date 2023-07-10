@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyEndProjectCode.Data;
 using MyEndProjectCode.Models;
@@ -6,6 +7,7 @@ using MyEndProjectCode.Models;
 namespace MyEndProjectCode.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ContactUserController : Controller
     {
         private readonly AppDbContext _context;

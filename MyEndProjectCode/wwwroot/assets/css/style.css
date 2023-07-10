@@ -455,7 +455,7 @@
     position:relative;
     right:150px;
     width:100px;
-    top:20px;
+    top:18px;
     font-size:18px;
     text-decoration:none;
     background:black;
@@ -717,3 +717,10 @@ input {
         transition: 1s ease;
     }
  
+
+
+    .sendmes{
+       position:relative;
+       padding-bottom:30px;
+        width:150px;
+    }
