@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using MyEndProjectCode.Models
+﻿
+@inject UserManager<AppUser> userManager;
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -54,8 +58,11 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Shaig Khazimov</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0">   @userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).UserName</h6>
+                        <form method="post" asp-area="Admin" asp-controller="Account" asp-action="AdminLogin" asp-route-userId="@userManager.Users.Where(u=>u.UserName==User.Identity.Name).FirstOrDefault().Id">
+                        <button >Logout</button>
+
+                        </form>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">

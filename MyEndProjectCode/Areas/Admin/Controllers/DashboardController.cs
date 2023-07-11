@@ -8,9 +8,15 @@ namespace MyEndProjectCode.Areas.Admin.Controllers
     public class DashboardController : Controller
     {
         [Area("Admin")]
-        public IActionResult Index()
+        public IActionResult Index(string viewName, string controllerName)
         {
-            return View();
+
+            if (viewName == "Index" && controllerName == "Dashboard")
+            {
+                return View();
+            }
+            return RedirectToAction("AdminLogin", "Account");
+           
         }
     }
 }

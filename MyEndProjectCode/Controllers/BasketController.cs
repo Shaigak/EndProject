@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyEndProjectCode.Data;
 using MyEndProjectCode.Models;
+using MyEndProjectCode.Services.Interfaces;
 using MyEndProjectCode.ViewModels.BasketViewModels;
 using Newtonsoft.Json;
 
@@ -14,10 +15,12 @@ namespace MyEndProjectCode.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly AppDbContext _context;
-        public BasketController(UserManager<AppUser> userManager, AppDbContext context)
+        private readonly IProductService _productService;
+        public BasketController(UserManager<AppUser> userManager, AppDbContext context, IProductService productService )
         {
             _userManager = userManager;
             _context = context;
+            _productService = productService;
         }
 
         public async Task<IActionResult> Index()
@@ -131,32 +134,63 @@ namespace MyEndProjectCode.Controllers
         }
 
 
-        public IActionResult IncrementProductCount(int? id)
+        public async Task<IActionResult> IncrementProductCount(int? id)
         {
             if (id is null) return BadRequest();
-            var baskets = JsonConvert.DeserializeObject<List<BasketProduct>>(Request.Cookies["basket"]);
-            var count = baskets.FirstOrDefault(b => b.ProductId == id).Quantity++;
+            var basketProducts = await _context.BasketProducts
+               .FirstOrDefaultAsync(bp => bp.Id == id);
 
-            Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
+            var count = basketProducts.Quantity++;
+
+            await _context.SaveChangesAsync();
 
             return Ok(count);
         }
 
-        [HttpPost]
-         public IActionResult DecrementProductCount(int? id)
+
+        public async Task<IActionResult> DecrementProductCount(int? id)
         {
             if (id is null) return BadRequest();
-           
-            var baskets = JsonConvert.DeserializeObject<List<BasketProduct>>(Request.Cookies["basket"]);
-           
-            var count = baskets.FirstOrDefault(b => b.ProductId == id).Quantity--;
+            var basketProducts = await _context.BasketProducts
+               .FirstOrDefaultAsync(bp => bp.Id == id);
 
-            Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
+            var count = basketProducts.Quantity--;
+
+            await _context.SaveChangesAsync();
 
             return Ok(count);
-         }
+        }
 
+        //[HttpPost]
+        // public IActionResult DecrementProductCount(int? id)
+        //{
+        //    if (id is null) return BadRequest();
 
+        //    var baskets = JsonConvert.DeserializeObject<List<BasketProduct>>(Request.Cookies["basket"]);
+
+        //    var count = baskets.FirstOrDefault(b => b.ProductId == id).Quantity--;
+
+        //    Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
+
+        //    return Ok(count);
+        // }
+
+        //public async Task<IActionResult> BasketProductCountChange(int basketId, int quantity)
+        //{
+        //    if (basketId < 1) return NotFound();
+        //    BasketProduct item = _context.BasketProducts.FirstOrDefault(x => x.Id == basketId);
+        //    if (item is null) return NotFound();
+
+        //    item.Quantity = item.Quantity + quantity;
+
+        //    if (item.Quantity == 0) return RedirectToAction("Index", "Cart");
+
+        //    Product product = await _productService.GetById(item.ProductId);
+
+        //    _context.SaveChanges();
+        //    //item.Count= ++quantity;
+        //    return RedirectToAction("Index", "Cart");
+        //}
 
 
     }

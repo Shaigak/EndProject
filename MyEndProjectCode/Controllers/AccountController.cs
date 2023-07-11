@@ -251,48 +251,6 @@ namespace MyEndProjectCode.Controllers
         }
 
 
-        public IActionResult AdminLogin()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AdminLogin(AdminLoginVM model, string viewName = null, string controllerName = null)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            AppUser user = await _userManager.FindByEmailAsync(model.EmailOrUsername);
-
-            if (user is null)
-            {
-                user = await _userManager.FindByNameAsync(model.EmailOrUsername);
-            }
-
-            if (user is null)
-            {
-                ModelState.AddModelError(string.Empty, "Email or password is wrong");
-                return View(model);
-            }
-
-            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.IsRememberMe, false);
-
-            if (!result.Succeeded)
-            {
-                ModelState.AddModelError(string.Empty, "Email or password is wrong");
-                return View(model);
-            }
-            ViewBag.UserId = await _userManager.FindByNameAsync(model.EmailOrUsername);
-            viewName = "Index";
-            controllerName = "Dashboard";
-            return RedirectToAction("Index", "Dashboard", new { viewName = "Index", controllerName = "Dashboard" });
-        }
-
-
-
 
 
     }

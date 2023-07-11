@@ -1,5 +1,6 @@
 ﻿
 $(function () {
+
     $(document).on("click", ".cate", function (e) {
         e.preventDefault();
 
@@ -15,7 +16,7 @@ $(function () {
             success: function (res) {
 
                 $(product).html(res)
-                console.log(res)
+               /* console.log(res)*/
             }
         })
 
@@ -36,7 +37,7 @@ $(function () {
             success: function (res) {
                
 
-                debugger
+               /* debugger*/
                 swal.fire({
                     icon: 'success',
                     title: 'product added',
@@ -47,7 +48,7 @@ $(function () {
 
                 $(".shaiq").text(res)
 
-                console.log($("#basketCount").html(100))
+              /*  console.log($("#basketCount").html(100))*/
 
                
             }
@@ -77,7 +78,7 @@ $(function () {
             success: function (res) {
 
 
-                debugger
+                /*debugger*/
                 swal.fire({
                     icon: 'success',
                     title: 'Product added to your wishlist ',
@@ -94,6 +95,112 @@ $(function () {
             }
         });
     });
+
+
+
+
+    $(document).on("click", ".topla", function () {
+        //let id = $(this).attr('data-id');
+        //e.preventDefault();
+
+        let id = $(this).parent().parent().parent().attr('id')
+
+        let count = $(this).prev().val();
+
+
+        $.ajax({
+            method: "POST",
+            url: "/basket/IncrementProductCount",
+            data: {
+                id: id
+            },
+            content: "application/x-www-from-urlencoded",
+            success: function (res) {
+
+                 
+                     window.location.reload();
+             
+              
+
+            }
+        });
+    });
+
+    $(document).on("click", ".cix", function () {
+   
+
+        let id = $(this).parent().parent().parent().attr('id')
+
+        let count = $(this).next().val();
+
+        debugger
+
+
+        $.ajax({
+            method: "POST",
+            url: "/basket/DecrementProductCount",
+            data: {
+                id: id
+            },
+            content: "application/x-www-from-urlencoded",
+            success: function (res) {
+
+                //if (count != 1) {
+                //    count--;
+                //    $(".cix").next().val(count);
+                //}
+
+                if (count != 1) {
+                    window.location.reload();
+                }
+               
+
+            }
+        });
+    });
+
+
+    //$(document).on("click", ".cix", function () {
+    //    //let id = $(this).attr('data-id');
+    //    //e.preventDefault();
+
+    //    let id = $(this).parent().parent().parent().attr('id')
+
+    //    let count = $(this).next().val();
+
+    //    debugger
+
+
+
+
+
+    //    $.ajax({
+    //        method: "POST",
+    //        url: "/basket/DecrementProductCount",
+    //        data: {
+    //            id: id
+    //        },
+    //        content: "application/x-www-from-urlencoded",
+    //        success: function (res) {
+
+
+
+
+    //            if (count != 1) {
+    //                count--;
+    //                $(".cix").next().val(count);
+    //            }
+
+    //            /*grandTotal();*/
+
+    //            /*window.reload.location();*/
+
+    //           /* window.location.reload();*/
+
+    //        }
+    //    });
+    //});
+
 
     $(document).on('click', '#deleteBtn', function () {
         var id = $(this).attr('data-id')
@@ -160,10 +267,10 @@ $(function () {
         //var basketCount = $('.shaiq')
         let id = $(this).parent().parent().attr("data-id");
 
-        console.log(id)
+      /*  console.log(id)*/
 
         let tr = $(this).parent().parent();
-        console.log(tr)
+     /*   console.log(tr)*/
         let data = { id: id };
         var basketCurrentCount = $('.basketCount').html()
        /* var id = $(this).attr('data-id');*/
@@ -235,6 +342,8 @@ $(function () {
     })
 
 
+
+
     function grandTotal() {
         let tbody = $(".tbody").children()
         let sum = 0;
@@ -242,7 +351,7 @@ $(function () {
             let price = parseFloat($(prod).children().eq(5).text())
             sum += price
 
-            console.log(price)
+            //console.log(price)
 
              
         }
@@ -251,6 +360,53 @@ $(function () {
      
        
     }
+
+
+    //function subTotal() {
+    //    let tbody = $(".tbody").children()
+
+    //    let head=0
+
+    //    for (var prod of tbody) {
+    //        let price = parseFloat($(prod).children().eq(4).text())
+
+    //        let total = parseFloat($(prod).children().eq(5).text())
+
+    //       head= price * total
+
+      
+
+    //    }
+
+    //    $(".grand-total").text(head);
+    //}
+
+
+
+    //$(document).on("click", ".incredit", function (e) {
+    //    e.preventDefault();
+
+
+    //    console.log("S")
+
+
+    //  /*  let parent = $(".product-grid-view")*/
+
+
+    //    //$.ajax({
+
+    //    //    url: "shop/GetAllProduct",
+    //    //    type: "Get",
+
+    //    //    success: function (res) {
+
+    //    //        $(parent).html(res)
+    //    //    }
+    //    //})
+
+    //}) 
+
+   
 
 
 
@@ -305,7 +461,7 @@ $(function () {
             var counta = $(min).next().val()
 
             let pricec = parseFloat($(tbody).children().eq(4).text())
-            console.log(pricec)
+            //console.log(pricec)
           
            
             
@@ -402,8 +558,8 @@ $(function () {
         let paginate = $(".pagination-area")
 
       
-        console.log(value1)
-        console.log(value2)
+        //console.log(value1)
+        //console.log(value2)
 
         let data = { value1: value1, value2: value2 }
         let parent = $(".product-grid-view")
