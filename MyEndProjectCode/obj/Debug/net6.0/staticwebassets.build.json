@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CMbdYJdehkLJoyRuaiqV+4hN7dXDdpVxbcSZ9vkbwtQ=",
+  "Hash": "e80Qcm/YFJPsch2i9XedKnXarURNxiSgk0BjkBIw5r4=",
   "Source": "MyEndProjectCode",
   "BasePath": "_content/MyEndProjectCode",
   "Mode": "Default",
@@ -2072,6 +2072,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\1759cfbc-8438-45b3-84c0-aa214b3c5981_1f030223-21f4-47cc-9718-baecdf0ecf19_2412ecd9-ba67-401b-8438-00a6e89c28c0 3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\17eb2dae-5c3d-4f46-85e1-19a58d1dda14 performance-parts.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/17eb2dae-5c3d-4f46-85e1-19a58d1dda14 performance-parts.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\17eb2dae-5c3d-4f46-85e1-19a58d1dda14 performance-parts.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\1f030223-21f4-47cc-9718-baecdf0ecf19_2412ecd9-ba67-401b-8438-00a6e89c28c0 3.jpg",

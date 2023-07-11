@@ -46,11 +46,11 @@
             <h2 class="sec-title">@Model.Settings["BestSeller"]</h2>
         </div>
 
-        <div class="best-seller-card" style="display: flex;">
+        <div class="best-seller-card row" @*style="display: flex;"*@>
 
             @foreach (var item in Model.Products)
             {
-                <div class="col-3">
+                <div class="col-lg-3 col-md-6 pb-5 col-sm-12">
 
                     <div class="product-card">
                         <div class="badge">Hot</div>
@@ -107,7 +107,7 @@
 
             @foreach (var item in Model.Populars)
             {
-                <div class="col-12 col-sm-6 col-lg-4 ">
+                <div class=" col-4 col-sm-12  col-md-6 ">
                     <div class="p-category-div cat-div">
                         <img class="imagfirst " src="~/assets/images/@item.Image" />
                         <h2 class="category1">@item.Name</h2>
