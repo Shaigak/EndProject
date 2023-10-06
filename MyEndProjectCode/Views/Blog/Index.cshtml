@@ -19,10 +19,10 @@
     </div>
     <div class="p-categoryrow">
 
-         <partial name="_BlogsPartial" model="@Model.PaginateBlog.Datas" />
+        <partial name="_BlogsPartial" model="@Model.PaginateBlog.Datas" />
 
 
-      
+
 
     </div>
 
@@ -32,15 +32,21 @@
 
 <nav data-aos="fade-right" style="display: flex; justify-content: center; margin-bottom: 20px;" aria-label="Page navigation example">
     <ul class="pagination">
-        
 
-      
+
+
         <div class="pagination-area">
 
 
-            
+
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
+
+                    <li class="page-item @(Model.PaginateBlog.HasPrevious ? " " : "d-none")">
+                        <a asp-action="Index" asp-route-page="@(Model.PaginateBlog.CurrentPage - 1)">
+                            <span class="page-link prevblog @(Model.PaginateBlog.HasNext ? " " : "disabled")">Previous</span>
+                        </a>
+                    </li>
 
 
                     @for (int i = 1; i <= Model.PaginateBlog.TotalPage; i++)
@@ -51,15 +57,15 @@
                     }
 
 
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">&raquo;</a>
+                    <li class="page-item @(Model.PaginateBlog.HasNext ? " " : "disabled")">
+                        <a asp-action="Index" asp-route-page="@(Model.PaginateBlog.CurrentPage + 1)" class="page-link next-blog nexttblog ">Next</a>
                     </li>
 
 
                 </ul>
             </nav>
         </div>
-        
+
 
     </ul>
 </nav>

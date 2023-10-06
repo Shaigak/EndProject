@@ -249,13 +249,12 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  /*gap: 15px;*/
   /*padding-left: 15%;*/
   padding-right: 15%;
-  margin-left:150px;
+  /*margin-left:150px;*/
 }
 .p-categoryrow .p-category-div {
- 
   width: 400px;
   height: 400px;
   margin: 0 auto;

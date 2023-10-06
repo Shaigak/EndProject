@@ -9,8 +9,19 @@
             <div class="product-image">
                 <img class="zoom" src="~/assets/images/@item.ProductImages.FirstOrDefault().Image" alt="">
                 <div class="basket-wishlist-compare d-flex justify-content-center">
+
+
                     <div class="add-basket text-center" data-id="@item.Id">
-                        <i class="fas fa-shopping-basket"></i>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <i class="fas fa-shopping-basket"></i>
+                        }
+                        else
+                        {
+                            <i class="fas fa-shopping-basket clic"></i>
+                        }
+
                     </div>
                 </div>
             </div>

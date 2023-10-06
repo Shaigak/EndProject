@@ -97,8 +97,9 @@
                 }
             </div>
             <div class="feedback-area">
-                <h2 class="heading">Please write your opinion
-</h2>
+                <h2 class="heading">
+                    Please write your opinion
+                </h2>
 
 
                 @if (User.Identity.IsAuthenticated)
@@ -117,12 +118,12 @@
 
                             <span class="submes"> Name</span>
                             <div class="form-field me-md-30 mb-30 mb-md-0">
-                                <input   asp-for="CommentVM.FullName" value="@(user.FirstName + " " + user.LastName )" readonly
+                                <input asp-for="CommentVM.FullName" value="@(user.FirstName + " " + user.LastName )" readonly
                                    class="input-field input1 inp2" />
                             </div>
 
                             <span class="submes"> Email </span>
-                            
+
                             <div class="form-field ">
                                 <input asp-for="CommentVM.Email" value="@(user.Email)" readonly
                                    class="input-field input1  inp2" />
@@ -132,27 +133,27 @@
 
                             <span class="submes"> Subject</span>
                             <div class="form-field mt-30">
-                            <input asp-for="CommentVM.Subject"
-                               placeholder="Subject (Optinal)"
-                               class="input-field input1 inp2  " />
-                          </div>
+                                <input asp-for="CommentVM.Subject"
+                                   placeholder="Subject (Optinal)"
+                                   class="input-field input1 inp2  " />
+                            </div>
 
 
 
 
-                        
-                          <div class="form-field mt-30">
-                            <textarea asp-for="CommentVM.Message"
-                                  placeholder="Message"
-                                  class="textarea-field messages "></textarea>
+
+                            <div class="form-field mt-30">
+                                <textarea asp-for="CommentVM.Message"
+                                      placeholder="Message"
+                                      class="textarea-field messages "></textarea>
                             </div>
 
 
                         </div>
 
-                        
 
-                        
+
+
 
 
 
@@ -180,33 +181,33 @@
                             <div class="form-field me-md-30 mb-30 mb-md-0">
                                 <input type="text"
                                    name="name"
-                                   placeholder="Your Name*"
-                                   class="input-field" />
+                                   placeholder="Your Name"
+                                   class="input-field inp2" />
                             </div>
                             <div class="form-field">
                                 <input type="text"
                                    name="email"
-                                   placeholder="Your Email*"
-                                   class="input-field" />
+                                   placeholder="Your Email"
+                                   class="input-field inp2" />
                             </div>
                         </div>
                         <div class="form-field mt-30">
                             <input type="text"
                                name="subject"
                                placeholder="Subject (Optinal)"
-                               class="input-field" />
+                               class="input-field inp2" />
                         </div>
                         <div class="form-field mt-30">
                             <textarea name="message"
                                   placeholder="Message"
-                                  class="textarea-field"></textarea>
+                                  class="textarea-field messages mesbox"></textarea>
                         </div>
                         <div class="button-wrap pt-5">
                             <button type="submit"
                                 value="submit"
                                 class="btn btn-custom-size xl-size btn-pronia-primary"
                                 name="submit">
-                                Post Comment
+                                <h1 class="postcom">Post Comment</h1>
                             </button>
                         </div>
                     </form>

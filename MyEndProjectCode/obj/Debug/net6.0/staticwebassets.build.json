@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e80Qcm/YFJPsch2i9XedKnXarURNxiSgk0BjkBIw5r4=",
+  "Hash": "wQbUHfmBQDAvdbbjIke71/dFQjBUzSu4Ehk/gw9Zykc=",
   "Source": "MyEndProjectCode",
   "BasePath": "_content/MyEndProjectCode",
   "Mode": "Default",
@@ -476,23 +476,6 @@
       "OriginalItemSpec": "wwwroot\\admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\lib\\tempusdominus\\js\\moment.min.js",
-      "SourceId": "MyEndProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
-      "BasePath": "_content/MyEndProjectCode",
-      "RelativePath": "admin/lib/tempusdominus/js/moment.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\lib\\tempusdominus\\js\\moment.min.js"
-    },
-    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\lib\\tempusdominus\\js\\moment-timezone.min.js",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -508,6 +491,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\lib\\tempusdominus\\js\\moment-timezone.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\lib\\tempusdominus\\js\\moment.min.js",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "admin/lib/tempusdominus/js/moment.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\lib\\tempusdominus\\js\\moment.min.js"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
@@ -1190,23 +1190,6 @@
       "OriginalItemSpec": "wwwroot\\admin\\scss\\bootstrap\\scss\\_variables.scss"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap.scss",
-      "SourceId": "MyEndProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
-      "BasePath": "_content/MyEndProjectCode",
-      "RelativePath": "admin/scss/bootstrap/scss/bootstrap.scss",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap.scss"
-    },
-    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -1256,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "admin/scss/bootstrap/scss/bootstrap.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap.scss"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
@@ -1972,23 +1972,6 @@
       "OriginalItemSpec": "wwwroot\\admin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\css\\slick.css",
-      "SourceId": "MyEndProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
-      "BasePath": "_content/MyEndProjectCode",
-      "RelativePath": "assets/css/slick.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\css\\slick.css"
-    },
-    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\css\\slick-theme.css",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -2004,6 +1987,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\slick-theme.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\css\\slick.css",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/css/slick.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\slick.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\css\\style.css",
@@ -2074,23 +2074,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\1759cfbc-8438-45b3-84c0-aa214b3c5981_1f030223-21f4-47cc-9718-baecdf0ecf19_2412ecd9-ba67-401b-8438-00a6e89c28c0 3.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\17eb2dae-5c3d-4f46-85e1-19a58d1dda14 performance-parts.jpg",
-      "SourceId": "MyEndProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
-      "BasePath": "_content/MyEndProjectCode",
-      "RelativePath": "assets/images/17eb2dae-5c3d-4f46-85e1-19a58d1dda14 performance-parts.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\17eb2dae-5c3d-4f46-85e1-19a58d1dda14 performance-parts.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\1f030223-21f4-47cc-9718-baecdf0ecf19_2412ecd9-ba67-401b-8438-00a6e89c28c0 3.jpg",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -2157,6 +2140,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\25639ea6-1837-4afc-bfce-c5db1df2c078 2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\2e9bea65-9308-42e0-93d1-0a256c3a81c8 blog-listing-img2-370x266.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/2e9bea65-9308-42e0-93d1-0a256c3a81c8 blog-listing-img2-370x266.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\2e9bea65-9308-42e0-93d1-0a256c3a81c8 blog-listing-img2-370x266.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\3.jpg",
@@ -2346,6 +2346,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\5fd68f29-2496-4ea1-80f2-fd7a192722ab 1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\63ea2545-a0b8-46ca-8743-241fa0eb4fd9 3.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/63ea2545-a0b8-46ca-8743-241fa0eb4fd9 3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\63ea2545-a0b8-46ca-8743-241fa0eb4fd9 3.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\63edce2f-4f1a-4955-ad6a-139545311264 5fd68f29-2496-4ea1-80f2-fd7a192722ab 1.jpg",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -2361,6 +2378,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\63edce2f-4f1a-4955-ad6a-139545311264 5fd68f29-2496-4ea1-80f2-fd7a192722ab 1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\8eea008f-aa4d-4321-982b-1558f857c62f blog-listing-img1-389x343.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/8eea008f-aa4d-4321-982b-1558f857c62f blog-listing-img1-389x343.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\8eea008f-aa4d-4321-982b-1558f857c62f blog-listing-img1-389x343.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\9349378e-d8d3-480e-bc08-924a22446edc car4jpg.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/9349378e-d8d3-480e-bc08-924a22446edc car4jpg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\9349378e-d8d3-480e-bc08-924a22446edc car4jpg.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\a2308858-4591-4d55-90c1-33c532df9c40_2.jpg",
@@ -2497,6 +2548,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\b18983f4-aecc-47e5-89d6-b6c360d9e0e0_2412ecd9-ba67-401b-8438-00a6e89c28c0 3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\b1fbf981-ec54-4c7a-b682-3ed0f19f0519 blog-listing-img3-370x266.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/b1fbf981-ec54-4c7a-b682-3ed0f19f0519 blog-listing-img3-370x266.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\b1fbf981-ec54-4c7a-b682-3ed0f19f0519 blog-listing-img3-370x266.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\b5379fab-36d2-4942-ad50-9a0e00d6105a porshe.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/b5379fab-36d2-4942-ad50-9a0e00d6105a porshe.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\b5379fab-36d2-4942-ad50-9a0e00d6105a porshe.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\b6c23826-5799-4917-9c75-19836bf7e041_3a571b93-e810-452d-b074-60f17c3498b6 4.jpg",
@@ -2956,6 +3041,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\f297b435-313d-47fd-87d3-c3bd5623727d 5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\f5483540-b130-40a3-9773-a0ea02103477 ben.jpg",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "assets/images/f5483540-b130-40a3-9773-a0ea02103477 ben.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\f5483540-b130-40a3-9773-a0ea02103477 ben.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\assets\\images\\find-img-710x539.png",
@@ -3502,23 +3604,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\slider.js"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\css\\slick.css",
-      "SourceId": "MyEndProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
-      "BasePath": "_content/MyEndProjectCode",
-      "RelativePath": "css/slick.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\slick.css"
-    },
-    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\css\\slick-theme.css",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -3534,6 +3619,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\slick-theme.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\css\\slick.css",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "css/slick.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\slick.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\css\\style.css",
@@ -3621,23 +3723,6 @@
       "OriginalItemSpec": "wwwroot\\scss\\Pages\\_about.scss"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\scss\\Pages\\_blog.scss",
-      "SourceId": "MyEndProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
-      "BasePath": "_content/MyEndProjectCode",
-      "RelativePath": "scss/Pages/_blog.scss",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\scss\\Pages\\_blog.scss"
-    },
-    {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\scss\\Pages\\_blog-single.scss",
       "SourceId": "MyEndProjectCode",
       "SourceType": "Discovered",
@@ -3653,6 +3738,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\Pages\\_blog-single.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\scss\\Pages\\_blog.scss",
+      "SourceId": "MyEndProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\",
+      "BasePath": "_content/MyEndProjectCode",
+      "RelativePath": "scss/Pages/_blog.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\Pages\\_blog.scss"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\MyEndProjectCode\\MyEndProjectCode\\wwwroot\\scss\\Pages\\_contact.scss",

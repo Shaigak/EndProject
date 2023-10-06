@@ -62,11 +62,24 @@
                             <h4><a href="">@item.Description</a></h4>
                             <div class="product-bottom-details">
                                 <div class="product-price">$@item.Price</div>
-                                <div class="product-links">
-                                    <a class="add-basket" data-id="@item.Id"><i class="fa fa-shopping-cart"></i></a>
 
-                                    <a class="add-baskets" data-id="@item.Id"><i class="fa-solid fa-heart"></i></a>
-                                </div>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="product-links">
+                                        <a class="add-basket" data-id="@item.Id"><i class="fa fa-shopping-cart curs"></i></a>
+
+                                        <a class="add-baskets" data-id="@item.Id"><i class="fa-solid fa-heart curs"></i></a>
+                                    </div>
+                                }
+                                else
+                                {
+                                      <div class="product-links">
+                                        <a class="add-basket "><i class="fa fa-shopping-cart clic curs"></i></a>
+
+                                        <a class="add-baskets" ><i class="fa-solid fa-heart clic curs"></i></a>
+                                    </div>
+                                }
+
                             </div>
                         </div>
                     </div>
@@ -77,6 +90,8 @@
 
         </div>
 </section>
+
+
 
 <section class="find-section">
     @foreach (var item in Model.Banners)
@@ -101,13 +116,14 @@
 
 
 
+
     <div class="p-categoryrow">
         <div class="row">
 
 
             @foreach (var item in Model.Populars)
             {
-                <div class=" col-4 col-sm-12  col-md-6 ">
+                <div class=" col-lg-4 col-md-6 col-sm-12 ">
                     <div class="p-category-div cat-div">
                         <img class="imagfirst " src="~/assets/images/@item.Image" />
                         <h2 class="category1">@item.Name</h2>
@@ -127,6 +143,28 @@
     </div>
 </section>
 
+
+    <section data-aos="fade-up" style="background-image: url(https://www.ncodetechnologies.com/zooy/images/deal-bg.jpg);" class="dealofday">
+      <div class="divday">
+        <h2 style="margin-bottom: 25px;">Deal of the Day</h2>
+        <h4>Turbo Diesel Timing Belt (4WD, 2WD/4WD)</h4>
+       <div style="margin-top: 60px;">
+        <div class="countdown-timer-container">
+          <div style="display: none;" class="countdown-timer-values" id="year">2022</div>
+          <div style="display: none;" class="countdown-timer-values" id="mounth">12</div>
+          <div class="countdown-timer-values"  id="days">26</div>
+          <div class="countdown-timer-values" id="hours">00</div>
+          <div class="countdown-timer-values" id="minutes">00</div>
+          <div class="countdown-timer-values" id="seconds">00</div>
+          <div class="countdown-div">days</div>
+          <div class="countdown-div">hours</div>
+          <div class="countdown-div">minutes</div>
+          <div class="countdown-div">seconds</div>
+          </div>
+       </div>
+     
+      </div>
+    </section>
 
 
 
@@ -148,7 +186,7 @@
                     <div class="post-date">@item.CreateDate.ToString("dd MMMMM yyyy")</div>
                     <h4><a class="blog-tit" href="blog-detail.html">@item.Title</a></h4>
                     <p class="blog-dis">@item.Title</p>
-                    <a h asp-controller="Blog" asp-action="GetBlogView" asp-route-id="@item.Id"  class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
+                    <a h asp-controller="Blog" asp-action="GetBlogView" asp-route-id="@item.Id" class="rmore btn1">Read more <i class="icon-right-arrow"></i></a>
                 </div>
             </div>
 
@@ -159,6 +197,9 @@
     </div>
 
 </section>
+
+
+
 
 <section data-aos="fade-in">
     <!-- karusel -->

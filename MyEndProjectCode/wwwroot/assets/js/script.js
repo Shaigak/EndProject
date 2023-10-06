@@ -44,7 +44,7 @@ $(function () {
                /* debugger*/
                 swal.fire({
                     icon: 'success',
-                    title: 'product added',
+                    title: 'Product added',
                     showconfirmbutton: false,
                     timer: 1500,
                 })
@@ -164,21 +164,10 @@ $(function () {
     //});
 
 
-    $(document).on("click", ".cix", function () {
+    $(document).on("click", ".minu", function () {
    
         let id = $(this).parent().parent().parent().attr("id");
-        debugger
-        let inputValue = $(this).next().val();
-       
-
-        let input = $(this).next();
-        if (inputValue != 1) {
-            inputValue--;
-            $(input).val(inputValue);
-        }
-
-        console.log(input)
-        console.log(inputValue)
+        
         $.ajax({
             method: "POST",
             url: "/basket/DecrementProductCount",
@@ -187,25 +176,31 @@ $(function () {
             },
             content: "application/x-www-from-urlencoded",
             success: function (res) {
-                subTotal();
+                                
             }
         });
+
+        let num = $(this).next().val()
+        if (num > 1) {
+            --num;
+            $(this).next().val(num)
+            let price = $(this).parent().parent().next().html()
+            let total = $(this).parent().parent().next().next().children().eq(0).html()
+            let grandTotal = $(".grand-total").html()
+            let res = parseFloat(grandTotal) - parseFloat(price)
+            $(".grand-total").html(res)
+            $(this).parent().parent().next().next().children().eq(0).html(parseFloat(total) - parseFloat(price))
+        }
+
+
+
     });
 
 
     $(document).on("click", ".topla", function () {
 
         let id = $(this).parent().parent().parent().attr("id");
-        debugger
-        let inputValue = $(this).prev().val();
-        let nativePrice = $(this).parent().parent().next().text();
-        let subtotalPrice = $(this).parent().parent().next().next().text();
-        let count = $(this).prev().val();
-
-        let input = $(this).prev();
         
-            inputValue++;
-            $(input).val(inputValue);
 
         $.ajax({
             method: "POST",
@@ -215,10 +210,20 @@ $(function () {
             },
             content: "application/x-www-from-urlencoded",
             success: function (res) {
-                subTotal(res, nativePrice, subtotalPrice, count);
-                grandTotal();
+                             
+
             }
         });
+
+        let num = $(this).prev().val()
+        ++num;
+        $(this).prev().val(num)
+        let price = $(this).parent().parent().next().html()
+        let total = $(this).parent().parent().next().next().html()
+        let grandTotal = $(".grand-total").html()
+        let res = parseFloat(price) + parseFloat(grandTotal)
+        $(".grand-total").html(res)
+        $(this).parent().parent().next().next().children().eq(0).html(parseFloat(price) * num)
     });
 
 
@@ -366,6 +371,21 @@ $(function () {
 
             }
         })
+
+    })
+
+
+    $(document).on("click", ".clic", function () {
+
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Please login our website ',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+        
 
     })
 

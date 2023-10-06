@@ -183,6 +183,12 @@
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
 
+                                 <li class="page-item @(Model.PaginateProduct.HasPrevious ? " " : "d-none")">
+                                <a asp-action="Index" asp-route-page="@(Model.PaginateProduct.CurrentPage - 1)">
+                                    <span class="page-link nexttt @(Model.PaginateProduct.HasNext ? " " : "disabled")">Previous</span>
+                                </a>
+                            </li>
+
 
                                 @for (int i = 1; i <= Model.PaginateProduct.TotalPage; i++)
                                 {
@@ -192,9 +198,14 @@
                                 }
 
 
-                                <li class="page-item">
+                              @*  <li class="page-item">
                                     <a class="page-link" href="#" aria-label="Next">&raquo;</a>
-                                </li>
+                                </li>*@
+
+
+                                <li class="page-item @(Model.PaginateProduct.HasNext ? " " : "disabled")">
+                                <a asp-action="Index" asp-route-page="@(Model.PaginateProduct.CurrentPage + 1)" class="page-link next-blog nextt ">Next</a>
+                            </li>
 
 
                             </ul>

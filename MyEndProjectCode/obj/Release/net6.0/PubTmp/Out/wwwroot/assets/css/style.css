@@ -46,11 +46,16 @@
     color:white;
 }
 
-.bask{
-   position:absolute;
-   margin-left:-40px;
-   margin-top:3px;
-   
+
+
+.fa-heart{
+    color:red;
+}
+.bask {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: 3px;
+    
 }
 
 .mainsearch:hover {
@@ -546,11 +551,12 @@ input {
     
 }
 
-.wishlish{
-    position:relative;
-    right:70px;
-    top:2px;
-    font-size:20px;
+.wishlish {
+    position: relative;
+    right: 70px;
+    top: 2px;
+    font-size: 20px;
+    color: red;
 }
 
 
@@ -687,12 +693,22 @@ input {
 
         .quan{
             margin-left:50px;
+          position:relative;
+          top:10px;
         }
 
 .zoom {
 
     transition: transform .2s;
 
+}
+
+.dang{
+    color:red;
+}
+
+.curs{
+    cursor:pointer;
 }
 
     .zoom:hover {
@@ -710,6 +726,8 @@ input {
     transition: 1s ease;
 }
 
+
+
     .shrink img:hover {
         -webkit-transform: scale(0.8);
         -ms-transform: scale(0.8);
@@ -724,3 +742,90 @@ input {
        padding-bottom:30px;
         width:150px;
     }
+
+
+    .best-seller{
+        width:99% !important; 
+    }
+
+    .minu{
+        position:relative;
+        right:40px;
+        top:15px;
+        cursor:pointer;
+    }
+
+.topla {
+    position: relative;
+    left: 45px;
+    bottom:37px;
+    cursor:pointer;
+    
+}
+
+.number{
+    bottom:11px;
+}
+
+.sizes {
+    width: 200px;
+    height: 200px;
+}
+
+
+.messages {
+    border: 3px solid #dee2e6;
+    background-color: white;
+    padding-left: 10px;
+  
+    width: 300px;
+    height: 100px;
+    position: relative;
+    top: 30px;
+    left:30px;
+
+}
+
+
+.mesbox{
+    position:relative;
+    right:70px;
+}
+
+.nextt {
+    width: 70px;
+    position: relative;
+    bottom: 21px;
+    left: 5px;
+    font-size: 18px;
+    /*padding-left:23px;*/
+    background-color: #FBB72C;
+}
+
+.nexttt {
+    width: 100px;
+    position: relative;
+    bottom: 20px;
+    left: 180px;
+    font-size: 18px;
+    background-color: #FBB72C;
+}
+
+.nexttblog {
+    width: 70px;
+    position: relative;
+   /* bottom: 17px;*/
+    left: 5px;
+    font-size: 18px;
+    /*padding-left:23px;*/
+    background-color: #FBB72C;
+}
+
+.prevblog {
+    width: 100px;
+    position: relative;
+    
+    right:5px;
+    font-size: 18px;
+    background-color: #FBB72C;
+}

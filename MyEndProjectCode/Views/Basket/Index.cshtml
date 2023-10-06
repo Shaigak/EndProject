@@ -44,18 +44,20 @@
 
 
                                     <div class="number">
+                                        
+                                     
+                                        <div class="minu">-</div>
 
-                                        <i class="fa-solid fa-minus cix"></i>
+                                        <input class="number" type="text" value="@item.Quantity" />
 
-                                        <input type="text" value="@item.Quantity" />
+                                        <div class="topla">+</div>
                                       
-                                        <i class="fa-solid fa-plus topla"></i>
+                                       @* <i class="fa-solid fa-plus topla"></i>*@
                                     </div>
                                 </td>
 
-                                <td>@item.Price$</td>
-
-                                <td>@item.Total</td>
+                                <td>@item.Price</td>
+                                <td> <span>@item.Total.ToString("N2")</span> $ </td> 
 
                                 <td>
                                     <a data-id="@item.Id" data-quantity="@item.Quantity" id="deleteBtn" style="cursor:pointer" class="text-danger">Delete</a>
